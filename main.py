@@ -10,7 +10,6 @@ load_dotenv()
 api_key = os.getenv('API_KEY')
 
 def main():
-
     primekg = pd.read_csv('disease_features.csv', low_memory = False)
     atx = primekg[primekg['mondo_name']=='ataxia telangiectasia']
     course_content= generate_course_content(atx)
@@ -41,15 +40,41 @@ def generate_course_content(topic):
     chat_completion = client.chat.completions.create(
         messages=[
             {
-                "role": "user",
-                "content": prmpt,
+                'role': 'user',
+                'content': prmpt,
             }
         ],
-        model="gpt-3.5-turbo",
+        model='gpt-3.5-turbo',
         )
     response_content = chat_completion.choices[0].message.content
     return response_content
-    
 
-if __name__ == "__main__":
-    main()
+def read_text(name):
+    with open(name, 'r') as file:
+        text = file.read()
+    return text
+
+def generate_quiz(content):
+    prmpt = f'Generate a 10 question multiple choice question on the following course content. {content}'
+    client = OpenAI(
+        # This is the default and can be omitted
+        api_key=api_key,
+        )
+
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                'role': 'user',
+                "content": prmpt,
+            }
+        ],
+        model='gpt-3.5-turbo',
+        )
+    response_content = chat_completion.choices[0].message.content
+    return response_content
+
+if __name__ == '__main__':
+    #main()
+    pass
+
+

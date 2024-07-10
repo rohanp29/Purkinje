@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		29C361562C3F365200CBD7CC /* SkillDropApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C361552C3F365200CBD7CC /* SkillDropApp.swift */; };
+		29C361582C3F365200CBD7CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C361572C3F365200CBD7CC /* ContentView.swift */; };
+		29C3615A2C3F365300CBD7CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C361592C3F365300CBD7CC /* Assets.xcassets */; };
+		29C3615E2C3F365300CBD7CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C3615D2C3F365300CBD7CC /* Preview Assets.xcassets */; };
+		29C361682C3F365300CBD7CC /* SkillDropTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C361672C3F365300CBD7CC /* SkillDropTests.swift */; };
+		29C361722C3F365300CBD7CC /* SkillDropUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C361712C3F365300CBD7CC /* SkillDropUITests.swift */; };
+		29C361742C3F365300CBD7CC /* SkillDropUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C361732C3F365300CBD7CC /* SkillDropUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		29C361642C3F365300CBD7CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29C3614A2C3F365100CBD7CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 29C361512C3F365100CBD7CC;
+			remoteInfo = SkillDrop;
+		};
+		29C3616E2C3F365300CBD7CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29C3614A2C3F365100CBD7CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 29C361512C3F365100CBD7CC;
+			remoteInfo = SkillDrop;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		29C361522C3F365200CBD7CC /* SkillDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29C361552C3F365200CBD7CC /* SkillDropApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDropApp.swift; sourceTree = "<group>"; };
+		29C361572C3F365200CBD7CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		29C361592C3F365300CBD7CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		29C3615B2C3F365300CBD7CC /* SkillDrop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkillDrop.entitlements; sourceTree = "<group>"; };
+		29C3615D2C3F365300CBD7CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		29C361632C3F365300CBD7CC /* SkillDropTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkillDropTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		29C361672C3F365300CBD7CC /* SkillDropTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDropTests.swift; sourceTree = "<group>"; };
+		29C3616D2C3F365300CBD7CC /* SkillDropUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkillDropUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		29C361712C3F365300CBD7CC /* SkillDropUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDropUITests.swift; sourceTree = "<group>"; };
+		29C361732C3F365300CBD7CC /* SkillDropUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDropUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		29C3614F2C3F365100CBD7CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C361602C3F365300CBD7CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C3616A2C3F365300CBD7CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		29C361492C3F365100CBD7CC = {
+			isa = PBXGroup;
+			children = (
+				29C361542C3F365200CBD7CC /* SkillDrop */,
+				29C361662C3F365300CBD7CC /* SkillDropTests */,
+				29C361702C3F365300CBD7CC /* SkillDropUITests */,
+				29C361532C3F365200CBD7CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		29C361532C3F365200CBD7CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29C361522C3F365200CBD7CC /* SkillDrop.app */,
+				29C361632C3F365300CBD7CC /* SkillDropTests.xctest */,
+				29C3616D2C3F365300CBD7CC /* SkillDropUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29C361542C3F365200CBD7CC /* SkillDrop */ = {
+			isa = PBXGroup;
+			children = (
+				29C361552C3F365200CBD7CC /* SkillDropApp.swift */,
+				29C361572C3F365200CBD7CC /* ContentView.swift */,
+				29C361592C3F365300CBD7CC /* Assets.xcassets */,
+				29C3615B2C3F365300CBD7CC /* SkillDrop.entitlements */,
+				29C3615C2C3F365300CBD7CC /* Preview Content */,
+			);
+			path = SkillDrop;
+			sourceTree = "<group>";
+		};
+		29C3615C2C3F365300CBD7CC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				29C3615D2C3F365300CBD7CC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		29C361662C3F365300CBD7CC /* SkillDropTests */ = {
+			isa = PBXGroup;
+			children = (
+				29C361672C3F365300CBD7CC /* SkillDropTests.swift */,
+			);
+			path = SkillDropTests;
+			sourceTree = "<group>";
+		};
+		29C361702C3F365300CBD7CC /* SkillDropUITests */ = {
+			isa = PBXGroup;
+			children = (
+				29C361712C3F365300CBD7CC /* SkillDropUITests.swift */,
+				29C361732C3F365300CBD7CC /* SkillDropUITestsLaunchTests.swift */,
+			);
+			path = SkillDropUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		29C361512C3F365100CBD7CC /* SkillDrop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29C361772C3F365300CBD7CC /* Build configuration list for PBXNativeTarget "SkillDrop" */;
+			buildPhases = (
+				29C3614E2C3F365100CBD7CC /* Sources */,
+				29C3614F2C3F365100CBD7CC /* Frameworks */,
+				29C361502C3F365100CBD7CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkillDrop;
+			productName = SkillDrop;
+			productReference = 29C361522C3F365200CBD7CC /* SkillDrop.app */;
+			productType = "com.apple.product-type.application";
+		};
+		29C361622C3F365300CBD7CC /* SkillDropTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29C3617A2C3F365300CBD7CC /* Build configuration list for PBXNativeTarget "SkillDropTests" */;
+			buildPhases = (
+				29C3615F2C3F365300CBD7CC /* Sources */,
+				29C361602C3F365300CBD7CC /* Frameworks */,
+				29C361612C3F365300CBD7CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				29C361652C3F365300CBD7CC /* PBXTargetDependency */,
+			);
+			name = SkillDropTests;
+			productName = SkillDropTests;
+			productReference = 29C361632C3F365300CBD7CC /* SkillDropTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		29C3616C2C3F365300CBD7CC /* SkillDropUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29C3617D2C3F365300CBD7CC /* Build configuration list for PBXNativeTarget "SkillDropUITests" */;
+			buildPhases = (
+				29C361692C3F365300CBD7CC /* Sources */,
+				29C3616A2C3F365300CBD7CC /* Frameworks */,
+				29C3616B2C3F365300CBD7CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				29C3616F2C3F365300CBD7CC /* PBXTargetDependency */,
+			);
+			name = SkillDropUITests;
+			productName = SkillDropUITests;
+			productReference = 29C3616D2C3F365300CBD7CC /* SkillDropUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29C3614A2C3F365100CBD7CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					29C361512C3F365100CBD7CC = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					29C361622C3F365300CBD7CC = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 29C361512C3F365100CBD7CC;
+					};
+					29C3616C2C3F365300CBD7CC = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 29C361512C3F365100CBD7CC;
+					};
+				};
+			};
+			buildConfigurationList = 29C3614D2C3F365100CBD7CC /* Build configuration list for PBXProject "SkillDrop" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 29C361492C3F365100CBD7CC;
+			productRefGroup = 29C361532C3F365200CBD7CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				29C361512C3F365100CBD7CC /* SkillDrop */,
+				29C361622C3F365300CBD7CC /* SkillDropTests */,
+				29C3616C2C3F365300CBD7CC /* SkillDropUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		29C361502C3F365100CBD7CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29C3615E2C3F365300CBD7CC /* Preview Assets.xcassets in Resources */,
+				29C3615A2C3F365300CBD7CC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C361612C3F365300CBD7CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C3616B2C3F365300CBD7CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		29C3614E2C3F365100CBD7CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29C361582C3F365200CBD7CC /* ContentView.swift in Sources */,
+				29C361562C3F365200CBD7CC /* SkillDropApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C3615F2C3F365300CBD7CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29C361682C3F365300CBD7CC /* SkillDropTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C361692C3F365300CBD7CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29C361722C3F365300CBD7CC /* SkillDropUITests.swift in Sources */,
+				29C361742C3F365300CBD7CC /* SkillDropUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		29C361652C3F365300CBD7CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 29C361512C3F365100CBD7CC /* SkillDrop */;
+			targetProxy = 29C361642C3F365300CBD7CC /* PBXContainerItemProxy */;
+		};
+		29C3616F2C3F365300CBD7CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 29C361512C3F365100CBD7CC /* SkillDrop */;
+			targetProxy = 29C3616E2C3F365300CBD7CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		29C361752C3F365300CBD7CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		29C361762C3F365300CBD7CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		29C361782C3F365300CBD7CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SkillDrop/SkillDrop.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SkillDrop/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SkillDrop.SkillDrop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		29C361792C3F365300CBD7CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SkillDrop/SkillDrop.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SkillDrop/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SkillDrop.SkillDrop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		29C3617B2C3F365300CBD7CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SkillDrop.SkillDropTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkillDrop.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SkillDrop";
+			};
+			name = Debug;
+		};
+		29C3617C2C3F365300CBD7CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SkillDrop.SkillDropTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkillDrop.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SkillDrop";
+			};
+			name = Release;
+		};
+		29C3617E2C3F365300CBD7CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SkillDrop.SkillDropUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SkillDrop;
+			};
+			name = Debug;
+		};
+		29C3617F2C3F365300CBD7CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SkillDrop.SkillDropUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SkillDrop;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		29C3614D2C3F365100CBD7CC /* Build configuration list for PBXProject "SkillDrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29C361752C3F365300CBD7CC /* Debug */,
+				29C361762C3F365300CBD7CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29C361772C3F365300CBD7CC /* Build configuration list for PBXNativeTarget "SkillDrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29C361782C3F365300CBD7CC /* Debug */,
+				29C361792C3F365300CBD7CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29C3617A2C3F365300CBD7CC /* Build configuration list for PBXNativeTarget "SkillDropTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29C3617B2C3F365300CBD7CC /* Debug */,
+				29C3617C2C3F365300CBD7CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29C3617D2C3F365300CBD7CC /* Build configuration list for PBXNativeTarget "SkillDropUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29C3617E2C3F365300CBD7CC /* Debug */,
+				29C3617F2C3F365300CBD7CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29C3614A2C3F365100CBD7CC /* Project object */;
+}

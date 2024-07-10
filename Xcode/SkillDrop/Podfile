@@ -1,0 +1,22 @@
+platform :ios, '13.0'
+
+target 'SkillDrop' do
+  use_frameworks!
+
+  # Pods for SkillDrop
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'GoogleSignIn'
+
+  target 'SkillDropTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'SkillDropUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+

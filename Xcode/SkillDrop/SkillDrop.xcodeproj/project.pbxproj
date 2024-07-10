@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04027A686C2E1B98C0E891F3 /* Pods_SkillDrop_SkillDropUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03882F6F59CAC57773A4C9D /* Pods_SkillDrop_SkillDropUITests.framework */; };
 		29C361562C3F365200CBD7CC /* SkillDropApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C361552C3F365200CBD7CC /* SkillDropApp.swift */; };
 		29C361582C3F365200CBD7CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C361572C3F365200CBD7CC /* ContentView.swift */; };
 		29C3615A2C3F365300CBD7CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C361592C3F365300CBD7CC /* Assets.xcassets */; };
@@ -14,6 +15,9 @@
 		29C361682C3F365300CBD7CC /* SkillDropTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C361672C3F365300CBD7CC /* SkillDropTests.swift */; };
 		29C361722C3F365300CBD7CC /* SkillDropUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C361712C3F365300CBD7CC /* SkillDropUITests.swift */; };
 		29C361742C3F365300CBD7CC /* SkillDropUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C361732C3F365300CBD7CC /* SkillDropUITestsLaunchTests.swift */; };
+		29C361812C3F3D0000CBD7CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29C361802C3F3CFF00CBD7CC /* GoogleService-Info.plist */; };
+		487087CE68995A50E34A9EB9 /* Pods_SkillDrop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C479E16C7D17EB89426D32 /* Pods_SkillDrop.framework */; };
+		549EAF8B350D4B90A2FB5505 /* Pods_SkillDropTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE92031F2F927D947720AE2 /* Pods_SkillDropTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,16 @@
 		29C3616D2C3F365300CBD7CC /* SkillDropUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkillDropUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C361712C3F365300CBD7CC /* SkillDropUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDropUITests.swift; sourceTree = "<group>"; };
 		29C361732C3F365300CBD7CC /* SkillDropUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDropUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		29C361802C3F3CFF00CBD7CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		36194AE2BFE99AD731EB1EB0 /* Pods-SkillDrop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillDrop.debug.xcconfig"; path = "Target Support Files/Pods-SkillDrop/Pods-SkillDrop.debug.xcconfig"; sourceTree = "<group>"; };
+		4A8E2FA68B00409136CE5D6F /* Pods-SkillDrop-SkillDropUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillDrop-SkillDropUITests.debug.xcconfig"; path = "Target Support Files/Pods-SkillDrop-SkillDropUITests/Pods-SkillDrop-SkillDropUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4BE92031F2F927D947720AE2 /* Pods_SkillDropTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkillDropTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CCB477B33B14BEE66E8A3A5 /* Pods-SkillDropTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillDropTests.debug.xcconfig"; path = "Target Support Files/Pods-SkillDropTests/Pods-SkillDropTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A03882F6F59CAC57773A4C9D /* Pods_SkillDrop_SkillDropUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkillDrop_SkillDropUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC152E7ACA58386A3B92127C /* Pods-SkillDrop-SkillDropUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillDrop-SkillDropUITests.release.xcconfig"; path = "Target Support Files/Pods-SkillDrop-SkillDropUITests/Pods-SkillDrop-SkillDropUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B1C479E16C7D17EB89426D32 /* Pods_SkillDrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkillDrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B35F8DDC6DC7103FA1EF1A97 /* Pods-SkillDrop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillDrop.release.xcconfig"; path = "Target Support Files/Pods-SkillDrop/Pods-SkillDrop.release.xcconfig"; sourceTree = "<group>"; };
+		FBCC3A79E712082EF9FA9D40 /* Pods-SkillDropTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillDropTests.release.xcconfig"; path = "Target Support Files/Pods-SkillDropTests/Pods-SkillDropTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				487087CE68995A50E34A9EB9 /* Pods_SkillDrop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				549EAF8B350D4B90A2FB5505 /* Pods_SkillDropTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04027A686C2E1B98C0E891F3 /* Pods_SkillDrop_SkillDropUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +96,8 @@
 				29C361662C3F365300CBD7CC /* SkillDropTests */,
 				29C361702C3F365300CBD7CC /* SkillDropUITests */,
 				29C361532C3F365200CBD7CC /* Products */,
+				38BD2AB1D9168CB9096E2827 /* Pods */,
+				B6843D39EEE607D38F2C4B52 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +118,7 @@
 				29C361572C3F365200CBD7CC /* ContentView.swift */,
 				29C361592C3F365300CBD7CC /* Assets.xcassets */,
 				29C3615B2C3F365300CBD7CC /* SkillDrop.entitlements */,
+				29C361802C3F3CFF00CBD7CC /* GoogleService-Info.plist */,
 				29C3615C2C3F365300CBD7CC /* Preview Content */,
 			);
 			path = SkillDrop;
@@ -129,6 +149,29 @@
 			path = SkillDropUITests;
 			sourceTree = "<group>";
 		};
+		38BD2AB1D9168CB9096E2827 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				36194AE2BFE99AD731EB1EB0 /* Pods-SkillDrop.debug.xcconfig */,
+				B35F8DDC6DC7103FA1EF1A97 /* Pods-SkillDrop.release.xcconfig */,
+				4A8E2FA68B00409136CE5D6F /* Pods-SkillDrop-SkillDropUITests.debug.xcconfig */,
+				AC152E7ACA58386A3B92127C /* Pods-SkillDrop-SkillDropUITests.release.xcconfig */,
+				7CCB477B33B14BEE66E8A3A5 /* Pods-SkillDropTests.debug.xcconfig */,
+				FBCC3A79E712082EF9FA9D40 /* Pods-SkillDropTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B6843D39EEE607D38F2C4B52 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1C479E16C7D17EB89426D32 /* Pods_SkillDrop.framework */,
+				A03882F6F59CAC57773A4C9D /* Pods_SkillDrop_SkillDropUITests.framework */,
+				4BE92031F2F927D947720AE2 /* Pods_SkillDropTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29C361772C3F365300CBD7CC /* Build configuration list for PBXNativeTarget "SkillDrop" */;
 			buildPhases = (
+				D92C3CB3494DDD3BEDA6C7D4 /* [CP] Check Pods Manifest.lock */,
 				29C3614E2C3F365100CBD7CC /* Sources */,
 				29C3614F2C3F365100CBD7CC /* Frameworks */,
 				29C361502C3F365100CBD7CC /* Resources */,
+				A8E372EF1B930E04C85647CA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,6 +198,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29C3617A2C3F365300CBD7CC /* Build configuration list for PBXNativeTarget "SkillDropTests" */;
 			buildPhases = (
+				B1D4A458CF51A91BF296318D /* [CP] Check Pods Manifest.lock */,
 				29C3615F2C3F365300CBD7CC /* Sources */,
 				29C361602C3F365300CBD7CC /* Frameworks */,
 				29C361612C3F365300CBD7CC /* Resources */,
@@ -171,9 +217,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29C3617D2C3F365300CBD7CC /* Build configuration list for PBXNativeTarget "SkillDropUITests" */;
 			buildPhases = (
+				4BC3EEC2ADCF439E74B38549 /* [CP] Check Pods Manifest.lock */,
 				29C361692C3F365300CBD7CC /* Sources */,
 				29C3616A2C3F365300CBD7CC /* Frameworks */,
 				29C3616B2C3F365300CBD7CC /* Resources */,
+				662202C3505A7588BC25BAE4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,6 +265,9 @@
 				Base,
 			);
 			mainGroup = 29C361492C3F365100CBD7CC;
+			packageReferences = (
+				29C361822C3F3D6300CBD7CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 29C361532C3F365200CBD7CC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -235,6 +286,7 @@
 			files = (
 				29C3615E2C3F365300CBD7CC /* Preview Assets.xcassets in Resources */,
 				29C3615A2C3F365300CBD7CC /* Assets.xcassets in Resources */,
+				29C361812C3F3D0000CBD7CC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +305,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4BC3EEC2ADCF439E74B38549 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkillDrop-SkillDropUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		662202C3505A7588BC25BAE4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkillDrop-SkillDropUITests/Pods-SkillDrop-SkillDropUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkillDrop-SkillDropUITests/Pods-SkillDrop-SkillDropUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkillDrop-SkillDropUITests/Pods-SkillDrop-SkillDropUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8E372EF1B930E04C85647CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkillDrop/Pods-SkillDrop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkillDrop/Pods-SkillDrop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkillDrop/Pods-SkillDrop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1D4A458CF51A91BF296318D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkillDropTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D92C3CB3494DDD3BEDA6C7D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkillDrop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		29C3614E2C3F365100CBD7CC /* Sources */ = {
@@ -413,6 +568,7 @@
 		};
 		29C361782C3F365300CBD7CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36194AE2BFE99AD731EB1EB0 /* Pods-SkillDrop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -433,7 +589,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
@@ -449,6 +605,7 @@
 		};
 		29C361792C3F365300CBD7CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B35F8DDC6DC7103FA1EF1A97 /* Pods-SkillDrop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -469,7 +626,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
@@ -485,6 +642,7 @@
 		};
 		29C3617B2C3F365300CBD7CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CCB477B33B14BEE66E8A3A5 /* Pods-SkillDropTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -507,6 +665,7 @@
 		};
 		29C3617C2C3F365300CBD7CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBCC3A79E712082EF9FA9D40 /* Pods-SkillDropTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -529,8 +688,9 @@
 		};
 		29C3617E2C3F365300CBD7CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A8E2FA68B00409136CE5D6F /* Pods-SkillDrop-SkillDropUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -550,8 +710,9 @@
 		};
 		29C3617F2C3F365300CBD7CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC152E7ACA58386A3B92127C /* Pods-SkillDrop-SkillDropUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -609,6 +770,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		29C361822C3F3D6300CBD7CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.29.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 29C3614A2C3F365100CBD7CC /* Project object */;
 }

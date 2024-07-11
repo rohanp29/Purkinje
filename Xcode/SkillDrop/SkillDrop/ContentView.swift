@@ -11,6 +11,7 @@ import Firebase
 struct ContentView: View {
     @State private var email = ""
     @State private var password = ""
+    @State private var userIsLoggedIn = false
     
     var body: some View {
         VStack {
@@ -82,6 +83,13 @@ struct ContentView: View {
                     .offset(y:110)
                 }
                 .frame(width:350)
+                .onAppear {
+                    Auth.auth().addStateDidChangeListener { auth, user in
+                        if user != nil {
+                            userIsLoggedIn.toggle()
+                        }
+                    }
+                }
             }
             .ignoresSafeArea()
         }

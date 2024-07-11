@@ -14,9 +14,9 @@ struct ContentView: View {
     var body: some View {
         VStack {
             ZStack {
-                Color.blue
+                Color.black
                 RoundedRectangle(cornerRadius: 30.0, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
-                    .foregroundStyle(.linearGradient(colors: [.purple, .blue], startPoint: .topLeading, endPoint: .bottomTrailing))
+                    .foregroundStyle(.linearGradient(colors: [.blue, .blue], startPoint: .topLeading, endPoint: .bottomTrailing))
                     .frame(width:1000, height: 400)
                     .rotationEffect(.degrees(135))
                     .offset(y:-350)
@@ -52,6 +52,20 @@ struct ContentView: View {
                     Rectangle()
                         .frame(width: 350, height: 1)
                         .foregroundColor(.white)
+                    
+                    Button {
+                        //sign up
+                    } label: {
+                        Text("Sign up")
+                            .bold()
+                            .frame(width: 200, height: 40)
+                            .background(
+                                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                    .fill(.linearGradient(colors: [.blue], startPoint: .topLeading, endPoint: .bottomTrailing))
+                            )
+                            .foregroundColor(.white)
+                    }
+
                     
                 }
                 .frame(width:350)

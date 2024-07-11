@@ -1,6 +1,0 @@
-framework module Pods_SkillDropTests {
-  umbrella header "Pods-SkillDropTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

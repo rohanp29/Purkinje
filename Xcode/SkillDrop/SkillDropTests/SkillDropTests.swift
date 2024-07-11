@@ -2,10 +2,11 @@
 //  SkillDropTests.swift
 //  SkillDropTests
 //
-//  Created by Devin Weikert on 7/10/24.
+//  Created by Devin Weikert on 7/11/24.
 //
 
 import XCTest
+@testable import SkillDrop
 
 final class SkillDropTests: XCTestCase {
 
@@ -27,7 +28,7 @@ final class SkillDropTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        measure {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

@@ -7,192 +7,136 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2951CAF02C3F5476004E097A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951CAEF2C3F5476004E097A /* AppDelegate.swift */; };
-		29C361562C3F365200CBD7CC /* SkillDropApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C361552C3F365200CBD7CC /* SkillDropApp.swift */; };
-		29C361582C3F365200CBD7CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C361572C3F365200CBD7CC /* ContentView.swift */; };
-		29C3615A2C3F365300CBD7CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C361592C3F365300CBD7CC /* Assets.xcassets */; };
-		29C3615E2C3F365300CBD7CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C3615D2C3F365300CBD7CC /* Preview Assets.xcassets */; };
-		29C361682C3F365300CBD7CC /* SkillDropTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C361672C3F365300CBD7CC /* SkillDropTests.swift */; };
-		29C361722C3F365300CBD7CC /* SkillDropUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C361712C3F365300CBD7CC /* SkillDropUITests.swift */; };
-		29C361742C3F365300CBD7CC /* SkillDropUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C361732C3F365300CBD7CC /* SkillDropUITestsLaunchTests.swift */; };
-		29C361812C3F3D0000CBD7CC /* SkillDrop.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = 29C361802C3F3CFF00CBD7CC /* SkillDrop.xcodeproj */; };
-		401240CBB98A3BDF050B43F1 /* Pods_SkillDrop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44BF2CCFE66D6FFAA2638D5 /* Pods_SkillDrop.framework */; };
-		711B3BF0057CAD596E5992E0 /* Pods_SkillDropUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59BCCC818F9CC0E3F5669484 /* Pods_SkillDropUITests.framework */; };
-		80FF2501C448FD6A4EB75A97 /* Pods_SkillDropTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46CD3E67865891DE60463641 /* Pods_SkillDropTests.framework */; };
+		29FA846D2C406723000C1B81 /* SkillDropApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA846C2C406723000C1B81 /* SkillDropApp.swift */; };
+		29FA846F2C406723000C1B81 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA846E2C406723000C1B81 /* ContentView.swift */; };
+		29FA84712C406724000C1B81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29FA84702C406724000C1B81 /* Assets.xcassets */; };
+		29FA84742C406724000C1B81 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29FA84732C406724000C1B81 /* Preview Assets.xcassets */; };
+		29FA847E2C406724000C1B81 /* SkillDropTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA847D2C406724000C1B81 /* SkillDropTests.swift */; };
+		29FA84882C406724000C1B81 /* SkillDropUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA84872C406724000C1B81 /* SkillDropUITests.swift */; };
+		29FA848A2C406724000C1B81 /* SkillDropUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA84892C406724000C1B81 /* SkillDropUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		29C361642C3F365300CBD7CC /* PBXContainerItemProxy */ = {
+		29FA847A2C406724000C1B81 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 29C3614A2C3F365100CBD7CC /* Project object */;
+			containerPortal = 29FA84612C406723000C1B81 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 29C361512C3F365100CBD7CC;
+			remoteGlobalIDString = 29FA84682C406723000C1B81;
 			remoteInfo = SkillDrop;
 		};
-		29C3616E2C3F365300CBD7CC /* PBXContainerItemProxy */ = {
+		29FA84842C406724000C1B81 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 29C3614A2C3F365100CBD7CC /* Project object */;
+			containerPortal = 29FA84612C406723000C1B81 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 29C361512C3F365100CBD7CC;
+			remoteGlobalIDString = 29FA84682C406723000C1B81;
 			remoteInfo = SkillDrop;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		20C353B8A279BC093D90BEBE /* Pods-SkillDropUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillDropUITests.debug.xcconfig"; path = "Target Support Files/Pods-SkillDropUITests/Pods-SkillDropUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		28F8E8D773A829F0D7FBD9A6 /* Pods-SkillDrop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillDrop.release.xcconfig"; path = "Target Support Files/Pods-SkillDrop/Pods-SkillDrop.release.xcconfig"; sourceTree = "<group>"; };
-		2951CAEF2C3F5476004E097A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		29C361522C3F365200CBD7CC /* SkillDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		29C361552C3F365200CBD7CC /* SkillDropApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDropApp.swift; sourceTree = "<group>"; };
-		29C361572C3F365200CBD7CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		29C361592C3F365300CBD7CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		29C3615B2C3F365300CBD7CC /* SkillDrop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkillDrop.entitlements; sourceTree = "<group>"; };
-		29C3615D2C3F365300CBD7CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		29C361632C3F365300CBD7CC /* SkillDropTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkillDropTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		29C361672C3F365300CBD7CC /* SkillDropTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDropTests.swift; sourceTree = "<group>"; };
-		29C3616D2C3F365300CBD7CC /* SkillDropUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkillDropUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		29C361712C3F365300CBD7CC /* SkillDropUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDropUITests.swift; sourceTree = "<group>"; };
-		29C361732C3F365300CBD7CC /* SkillDropUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDropUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		29C361802C3F3CFF00CBD7CC /* SkillDrop.xcodeproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "wrapper.pb-project"; name = SkillDrop.xcodeproj; path = ../SkillDrop.xcodeproj; sourceTree = "<group>"; };
-		4539F968A59B88B5754CF523 /* Pods-SkillDropTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillDropTests.debug.xcconfig"; path = "Target Support Files/Pods-SkillDropTests/Pods-SkillDropTests.debug.xcconfig"; sourceTree = "<group>"; };
-		46CD3E67865891DE60463641 /* Pods_SkillDropTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkillDropTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		49890E6243400629D1238F89 /* Pods-SkillDropTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillDropTests.release.xcconfig"; path = "Target Support Files/Pods-SkillDropTests/Pods-SkillDropTests.release.xcconfig"; sourceTree = "<group>"; };
-		59BCCC818F9CC0E3F5669484 /* Pods_SkillDropUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkillDropUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A57E98AB6D6DE1E3CBFD0C60 /* Pods-SkillDrop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillDrop.debug.xcconfig"; path = "Target Support Files/Pods-SkillDrop/Pods-SkillDrop.debug.xcconfig"; sourceTree = "<group>"; };
-		B0090F35493B059717F6D267 /* Pods-SkillDropUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillDropUITests.release.xcconfig"; path = "Target Support Files/Pods-SkillDropUITests/Pods-SkillDropUITests.release.xcconfig"; sourceTree = "<group>"; };
-		D44BF2CCFE66D6FFAA2638D5 /* Pods_SkillDrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkillDrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29FA84692C406723000C1B81 /* SkillDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29FA846C2C406723000C1B81 /* SkillDropApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDropApp.swift; sourceTree = "<group>"; };
+		29FA846E2C406723000C1B81 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		29FA84702C406724000C1B81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		29FA84732C406724000C1B81 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		29FA84792C406724000C1B81 /* SkillDropTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkillDropTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		29FA847D2C406724000C1B81 /* SkillDropTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDropTests.swift; sourceTree = "<group>"; };
+		29FA84832C406724000C1B81 /* SkillDropUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkillDropUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		29FA84872C406724000C1B81 /* SkillDropUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDropUITests.swift; sourceTree = "<group>"; };
+		29FA84892C406724000C1B81 /* SkillDropUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDropUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		29C3614F2C3F365100CBD7CC /* Frameworks */ = {
+		29FA84662C406723000C1B81 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				401240CBB98A3BDF050B43F1 /* Pods_SkillDrop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		29C361602C3F365300CBD7CC /* Frameworks */ = {
+		29FA84762C406724000C1B81 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80FF2501C448FD6A4EB75A97 /* Pods_SkillDropTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		29C3616A2C3F365300CBD7CC /* Frameworks */ = {
+		29FA84802C406724000C1B81 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				711B3BF0057CAD596E5992E0 /* Pods_SkillDropUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2956AED02C3F5E3000DF8F80 /* Products */ = {
-			isa = PBXGroup;
-			name = Products;
-			sourceTree = "<group>";
-		};
-		29C361492C3F365100CBD7CC = {
+		29FA84602C406723000C1B81 = {
 			isa = PBXGroup;
 			children = (
-				29C361542C3F365200CBD7CC /* SkillDrop */,
-				29C361662C3F365300CBD7CC /* SkillDropTests */,
-				29C361702C3F365300CBD7CC /* SkillDropUITests */,
-				29C361532C3F365200CBD7CC /* Products */,
-				38BD2AB1D9168CB9096E2827 /* Pods */,
-				FC4526E06AFF5EB74B0ABF84 /* Frameworks */,
+				29FA846B2C406723000C1B81 /* SkillDrop */,
+				29FA847C2C406724000C1B81 /* SkillDropTests */,
+				29FA84862C406724000C1B81 /* SkillDropUITests */,
+				29FA846A2C406723000C1B81 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		29C361532C3F365200CBD7CC /* Products */ = {
+		29FA846A2C406723000C1B81 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				29C361522C3F365200CBD7CC /* SkillDrop.app */,
-				29C361632C3F365300CBD7CC /* SkillDropTests.xctest */,
-				29C3616D2C3F365300CBD7CC /* SkillDropUITests.xctest */,
+				29FA84692C406723000C1B81 /* SkillDrop.app */,
+				29FA84792C406724000C1B81 /* SkillDropTests.xctest */,
+				29FA84832C406724000C1B81 /* SkillDropUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29C361542C3F365200CBD7CC /* SkillDrop */ = {
+		29FA846B2C406723000C1B81 /* SkillDrop */ = {
 			isa = PBXGroup;
 			children = (
-				2951CAEF2C3F5476004E097A /* AppDelegate.swift */,
-				29C361552C3F365200CBD7CC /* SkillDropApp.swift */,
-				29C361572C3F365200CBD7CC /* ContentView.swift */,
-				29C361592C3F365300CBD7CC /* Assets.xcassets */,
-				29C3615B2C3F365300CBD7CC /* SkillDrop.entitlements */,
-				29C361802C3F3CFF00CBD7CC /* SkillDrop.xcodeproj */,
-				29C3615C2C3F365300CBD7CC /* Preview Content */,
+				29FA846C2C406723000C1B81 /* SkillDropApp.swift */,
+				29FA846E2C406723000C1B81 /* ContentView.swift */,
+				29FA84702C406724000C1B81 /* Assets.xcassets */,
+				29FA84722C406724000C1B81 /* Preview Content */,
 			);
 			path = SkillDrop;
 			sourceTree = "<group>";
 		};
-		29C3615C2C3F365300CBD7CC /* Preview Content */ = {
+		29FA84722C406724000C1B81 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				29C3615D2C3F365300CBD7CC /* Preview Assets.xcassets */,
+				29FA84732C406724000C1B81 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		29C361662C3F365300CBD7CC /* SkillDropTests */ = {
+		29FA847C2C406724000C1B81 /* SkillDropTests */ = {
 			isa = PBXGroup;
 			children = (
-				29C361672C3F365300CBD7CC /* SkillDropTests.swift */,
+				29FA847D2C406724000C1B81 /* SkillDropTests.swift */,
 			);
 			path = SkillDropTests;
 			sourceTree = "<group>";
 		};
-		29C361702C3F365300CBD7CC /* SkillDropUITests */ = {
+		29FA84862C406724000C1B81 /* SkillDropUITests */ = {
 			isa = PBXGroup;
 			children = (
-				29C361712C3F365300CBD7CC /* SkillDropUITests.swift */,
-				29C361732C3F365300CBD7CC /* SkillDropUITestsLaunchTests.swift */,
+				29FA84872C406724000C1B81 /* SkillDropUITests.swift */,
+				29FA84892C406724000C1B81 /* SkillDropUITestsLaunchTests.swift */,
 			);
 			path = SkillDropUITests;
-			sourceTree = "<group>";
-		};
-		38BD2AB1D9168CB9096E2827 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A57E98AB6D6DE1E3CBFD0C60 /* Pods-SkillDrop.debug.xcconfig */,
-				28F8E8D773A829F0D7FBD9A6 /* Pods-SkillDrop.release.xcconfig */,
-				4539F968A59B88B5754CF523 /* Pods-SkillDropTests.debug.xcconfig */,
-				49890E6243400629D1238F89 /* Pods-SkillDropTests.release.xcconfig */,
-				20C353B8A279BC093D90BEBE /* Pods-SkillDropUITests.debug.xcconfig */,
-				B0090F35493B059717F6D267 /* Pods-SkillDropUITests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		FC4526E06AFF5EB74B0ABF84 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D44BF2CCFE66D6FFAA2638D5 /* Pods_SkillDrop.framework */,
-				46CD3E67865891DE60463641 /* Pods_SkillDropTests.framework */,
-				59BCCC818F9CC0E3F5669484 /* Pods_SkillDropUITests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		29C361512C3F365100CBD7CC /* SkillDrop */ = {
+		29FA84682C406723000C1B81 /* SkillDrop */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 29C361772C3F365300CBD7CC /* Build configuration list for PBXNativeTarget "SkillDrop" */;
+			buildConfigurationList = 29FA848D2C406724000C1B81 /* Build configuration list for PBXNativeTarget "SkillDrop" */;
 			buildPhases = (
-				DAD2426ADE3DB35552DFF884 /* [CP] Check Pods Manifest.lock */,
-				29C3614E2C3F365100CBD7CC /* Sources */,
-				29C3614F2C3F365100CBD7CC /* Frameworks */,
-				29C361502C3F365100CBD7CC /* Resources */,
-				59D2D585D37D3E4F252A34D8 /* [CP] Embed Pods Frameworks */,
-				04DE87861083F3B476CBB699 /* [CP] Copy Pods Resources */,
+				29FA84652C406723000C1B81 /* Sources */,
+				29FA84662C406723000C1B81 /* Frameworks */,
+				29FA84672C406723000C1B81 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -200,71 +144,69 @@
 			);
 			name = SkillDrop;
 			productName = SkillDrop;
-			productReference = 29C361522C3F365200CBD7CC /* SkillDrop.app */;
+			productReference = 29FA84692C406723000C1B81 /* SkillDrop.app */;
 			productType = "com.apple.product-type.application";
 		};
-		29C361622C3F365300CBD7CC /* SkillDropTests */ = {
+		29FA84782C406724000C1B81 /* SkillDropTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 29C3617A2C3F365300CBD7CC /* Build configuration list for PBXNativeTarget "SkillDropTests" */;
+			buildConfigurationList = 29FA84902C406724000C1B81 /* Build configuration list for PBXNativeTarget "SkillDropTests" */;
 			buildPhases = (
-				F61D1A6111C411451F1639A1 /* [CP] Check Pods Manifest.lock */,
-				29C3615F2C3F365300CBD7CC /* Sources */,
-				29C361602C3F365300CBD7CC /* Frameworks */,
-				29C361612C3F365300CBD7CC /* Resources */,
+				29FA84752C406724000C1B81 /* Sources */,
+				29FA84762C406724000C1B81 /* Frameworks */,
+				29FA84772C406724000C1B81 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				29C361652C3F365300CBD7CC /* PBXTargetDependency */,
+				29FA847B2C406724000C1B81 /* PBXTargetDependency */,
 			);
 			name = SkillDropTests;
 			productName = SkillDropTests;
-			productReference = 29C361632C3F365300CBD7CC /* SkillDropTests.xctest */;
+			productReference = 29FA84792C406724000C1B81 /* SkillDropTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		29C3616C2C3F365300CBD7CC /* SkillDropUITests */ = {
+		29FA84822C406724000C1B81 /* SkillDropUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 29C3617D2C3F365300CBD7CC /* Build configuration list for PBXNativeTarget "SkillDropUITests" */;
+			buildConfigurationList = 29FA84932C406724000C1B81 /* Build configuration list for PBXNativeTarget "SkillDropUITests" */;
 			buildPhases = (
-				1D178216A4F6457829E0EC23 /* [CP] Check Pods Manifest.lock */,
-				29C361692C3F365300CBD7CC /* Sources */,
-				29C3616A2C3F365300CBD7CC /* Frameworks */,
-				29C3616B2C3F365300CBD7CC /* Resources */,
+				29FA847F2C406724000C1B81 /* Sources */,
+				29FA84802C406724000C1B81 /* Frameworks */,
+				29FA84812C406724000C1B81 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				29C3616F2C3F365300CBD7CC /* PBXTargetDependency */,
+				29FA84852C406724000C1B81 /* PBXTargetDependency */,
 			);
 			name = SkillDropUITests;
 			productName = SkillDropUITests;
-			productReference = 29C3616D2C3F365300CBD7CC /* SkillDropUITests.xctest */;
+			productReference = 29FA84832C406724000C1B81 /* SkillDropUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		29C3614A2C3F365100CBD7CC /* Project object */ = {
+		29FA84612C406723000C1B81 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
-					29C361512C3F365100CBD7CC = {
+					29FA84682C406723000C1B81 = {
 						CreatedOnToolsVersion = 15.4;
 					};
-					29C361622C3F365300CBD7CC = {
+					29FA84782C406724000C1B81 = {
 						CreatedOnToolsVersion = 15.4;
-						TestTargetID = 29C361512C3F365100CBD7CC;
+						TestTargetID = 29FA84682C406723000C1B81;
 					};
-					29C3616C2C3F365300CBD7CC = {
+					29FA84822C406724000C1B81 = {
 						CreatedOnToolsVersion = 15.4;
-						TestTargetID = 29C361512C3F365100CBD7CC;
+						TestTargetID = 29FA84682C406723000C1B81;
 					};
 				};
 			};
-			buildConfigurationList = 29C3614D2C3F365100CBD7CC /* Build configuration list for PBXProject "SkillDrop" */;
+			buildConfigurationList = 29FA84642C406723000C1B81 /* Build configuration list for PBXProject "SkillDrop" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -272,46 +214,36 @@
 				en,
 				Base,
 			);
-			mainGroup = 29C361492C3F365100CBD7CC;
-			packageReferences = (
-				29C361822C3F3D6300CBD7CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-			);
-			productRefGroup = 29C361532C3F365200CBD7CC /* Products */;
+			mainGroup = 29FA84602C406723000C1B81;
+			productRefGroup = 29FA846A2C406723000C1B81 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 2956AED02C3F5E3000DF8F80 /* Products */;
-					ProjectRef = 29C361802C3F3CFF00CBD7CC /* SkillDrop.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
-				29C361512C3F365100CBD7CC /* SkillDrop */,
-				29C361622C3F365300CBD7CC /* SkillDropTests */,
-				29C3616C2C3F365300CBD7CC /* SkillDropUITests */,
+				29FA84682C406723000C1B81 /* SkillDrop */,
+				29FA84782C406724000C1B81 /* SkillDropTests */,
+				29FA84822C406724000C1B81 /* SkillDropUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		29C361502C3F365100CBD7CC /* Resources */ = {
+		29FA84672C406723000C1B81 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29C3615E2C3F365300CBD7CC /* Preview Assets.xcassets in Resources */,
-				29C3615A2C3F365300CBD7CC /* Assets.xcassets in Resources */,
-				29C361812C3F3D0000CBD7CC /* SkillDrop.xcodeproj in Resources */,
+				29FA84742C406724000C1B81 /* Preview Assets.xcassets in Resources */,
+				29FA84712C406724000C1B81 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		29C361612C3F365300CBD7CC /* Resources */ = {
+		29FA84772C406724000C1B81 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		29C3616B2C3F365300CBD7CC /* Resources */ = {
+		29FA84812C406724000C1B81 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -320,154 +252,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		04DE87861083F3B476CBB699 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SkillDrop/Pods-SkillDrop-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SkillDrop/Pods-SkillDrop-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkillDrop/Pods-SkillDrop-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1D178216A4F6457829E0EC23 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SkillDropUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		59D2D585D37D3E4F252A34D8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SkillDrop/Pods-SkillDrop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SkillDrop/Pods-SkillDrop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkillDrop/Pods-SkillDrop-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DAD2426ADE3DB35552DFF884 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SkillDrop-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F61D1A6111C411451F1639A1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SkillDropTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		29C3614E2C3F365100CBD7CC /* Sources */ = {
+		29FA84652C406723000C1B81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2951CAF02C3F5476004E097A /* AppDelegate.swift in Sources */,
-				29C361582C3F365200CBD7CC /* ContentView.swift in Sources */,
-				29C361562C3F365200CBD7CC /* SkillDropApp.swift in Sources */,
+				29FA846F2C406723000C1B81 /* ContentView.swift in Sources */,
+				29FA846D2C406723000C1B81 /* SkillDropApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		29C3615F2C3F365300CBD7CC /* Sources */ = {
+		29FA84752C406724000C1B81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29C361682C3F365300CBD7CC /* SkillDropTests.swift in Sources */,
+				29FA847E2C406724000C1B81 /* SkillDropTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		29C361692C3F365300CBD7CC /* Sources */ = {
+		29FA847F2C406724000C1B81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29C361722C3F365300CBD7CC /* SkillDropUITests.swift in Sources */,
-				29C361742C3F365300CBD7CC /* SkillDropUITestsLaunchTests.swift in Sources */,
+				29FA84882C406724000C1B81 /* SkillDropUITests.swift in Sources */,
+				29FA848A2C406724000C1B81 /* SkillDropUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		29C361652C3F365300CBD7CC /* PBXTargetDependency */ = {
+		29FA847B2C406724000C1B81 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 29C361512C3F365100CBD7CC /* SkillDrop */;
-			targetProxy = 29C361642C3F365300CBD7CC /* PBXContainerItemProxy */;
+			target = 29FA84682C406723000C1B81 /* SkillDrop */;
+			targetProxy = 29FA847A2C406724000C1B81 /* PBXContainerItemProxy */;
 		};
-		29C3616F2C3F365300CBD7CC /* PBXTargetDependency */ = {
+		29FA84852C406724000C1B81 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 29C361512C3F365100CBD7CC /* SkillDrop */;
-			targetProxy = 29C3616E2C3F365300CBD7CC /* PBXContainerItemProxy */;
+			target = 29FA84682C406723000C1B81 /* SkillDrop */;
+			targetProxy = 29FA84842C406724000C1B81 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		29C361752C3F365300CBD7CC /* Debug */ = {
+		29FA848B2C406724000C1B81 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -519,16 +347,18 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		29C361762C3F365300CBD7CC /* Release */ = {
+		29FA848C2C406724000C1B81 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -574,92 +404,74 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		29C361782C3F365300CBD7CC /* Debug */ = {
+		29FA848E2C406724000C1B81 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A57E98AB6D6DE1E3CBFD0C60 /* Pods-SkillDrop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SkillDrop/SkillDrop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SkillDrop/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.SkillDrop.SkillDrop;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skilldrop.SkillDrop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		29C361792C3F365300CBD7CC /* Release */ = {
+		29FA848F2C406724000C1B81 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 28F8E8D773A829F0D7FBD9A6 /* Pods-SkillDrop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SkillDrop/SkillDrop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SkillDrop/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.SkillDrop.SkillDrop;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skilldrop.SkillDrop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		29C3617B2C3F365300CBD7CC /* Debug */ = {
+		29FA84912C406724000C1B81 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4539F968A59B88B5754CF523 /* Pods-SkillDropTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -667,12 +479,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.SkillDrop.SkillDropTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skilldrop.SkillDropTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -680,9 +489,8 @@
 			};
 			name = Debug;
 		};
-		29C3617C2C3F365300CBD7CC /* Release */ = {
+		29FA84922C406724000C1B81 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 49890E6243400629D1238F89 /* Pods-SkillDropTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -690,12 +498,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.SkillDrop.SkillDropTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skilldrop.SkillDropTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -703,21 +508,16 @@
 			};
 			name = Release;
 		};
-		29C3617E2C3F365300CBD7CC /* Debug */ = {
+		29FA84942C406724000C1B81 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20C353B8A279BC093D90BEBE /* Pods-SkillDropUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.SkillDrop.SkillDropUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skilldrop.SkillDropUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -725,21 +525,16 @@
 			};
 			name = Debug;
 		};
-		29C3617F2C3F365300CBD7CC /* Release */ = {
+		29FA84952C406724000C1B81 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0090F35493B059717F6D267 /* Pods-SkillDropUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.SkillDrop.SkillDropUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skilldrop.SkillDropUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -750,54 +545,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		29C3614D2C3F365100CBD7CC /* Build configuration list for PBXProject "SkillDrop" */ = {
+		29FA84642C406723000C1B81 /* Build configuration list for PBXProject "SkillDrop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				29C361752C3F365300CBD7CC /* Debug */,
-				29C361762C3F365300CBD7CC /* Release */,
+				29FA848B2C406724000C1B81 /* Debug */,
+				29FA848C2C406724000C1B81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		29C361772C3F365300CBD7CC /* Build configuration list for PBXNativeTarget "SkillDrop" */ = {
+		29FA848D2C406724000C1B81 /* Build configuration list for PBXNativeTarget "SkillDrop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				29C361782C3F365300CBD7CC /* Debug */,
-				29C361792C3F365300CBD7CC /* Release */,
+				29FA848E2C406724000C1B81 /* Debug */,
+				29FA848F2C406724000C1B81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		29C3617A2C3F365300CBD7CC /* Build configuration list for PBXNativeTarget "SkillDropTests" */ = {
+		29FA84902C406724000C1B81 /* Build configuration list for PBXNativeTarget "SkillDropTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				29C3617B2C3F365300CBD7CC /* Debug */,
-				29C3617C2C3F365300CBD7CC /* Release */,
+				29FA84912C406724000C1B81 /* Debug */,
+				29FA84922C406724000C1B81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		29C3617D2C3F365300CBD7CC /* Build configuration list for PBXNativeTarget "SkillDropUITests" */ = {
+		29FA84932C406724000C1B81 /* Build configuration list for PBXNativeTarget "SkillDropUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				29C3617E2C3F365300CBD7CC /* Debug */,
-				29C3617F2C3F365300CBD7CC /* Release */,
+				29FA84942C406724000C1B81 /* Debug */,
+				29FA84952C406724000C1B81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		29C361822C3F3D6300CBD7CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.29.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 	};
-	rootObject = 29C3614A2C3F365100CBD7CC /* Project object */;
+	rootObject = 29FA84612C406723000C1B81 /* Project object */;
 }

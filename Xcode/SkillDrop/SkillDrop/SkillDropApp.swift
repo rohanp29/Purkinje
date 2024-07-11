@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@main
 struct SkillDropApp: App {
     var body: some Scene {
         WindowGroup {

@@ -1,4 +1,4 @@
-platform :ios, '13.0'
+platform :ios, '17.0'
 
 target 'SkillDrop' do
   use_frameworks!
@@ -19,4 +19,3 @@ target 'SkillDrop' do
   end
 
 end
-

@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct ListView: View {
+    @EnvironmentObject var dataManager: DataManager
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List(dataManager.skills, id: \.id) { skill in
+                Text(skill.skilltype)
+            }
+            .navigationTitle("Skills")
+            .navigationBarItems(trailing: Button(action: {
+                //add
+            }, label: {
+                Image(systemName: "plus")
+            }))
+        }
     }
 }
 

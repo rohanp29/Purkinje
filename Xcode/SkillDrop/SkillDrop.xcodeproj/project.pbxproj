@@ -43,6 +43,7 @@
 		29FA84CC2C407C76000C1B81 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 29FA84CB2C407C76000C1B81 /* FirebaseStorageCombine-Community */; };
 		29FA84CE2C407C76000C1B81 /* FirebaseVertexAI-Preview in Frameworks */ = {isa = PBXBuildFile; productRef = 29FA84CD2C407C76000C1B81 /* FirebaseVertexAI-Preview */; };
 		29FA84D02C407D6D000C1B81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29FA84CF2C407D6D000C1B81 /* GoogleService-Info.plist */; };
+		29FA84D62C40BF2F000C1B81 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA84D52C40BF2F000C1B81 /* ListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		29FA84872C406724000C1B81 /* SkillDropUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDropUITests.swift; sourceTree = "<group>"; };
 		29FA84892C406724000C1B81 /* SkillDropUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDropUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		29FA84CF2C407D6D000C1B81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		29FA84D52C40BF2F000C1B81 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			children = (
 				29FA846C2C406723000C1B81 /* SkillDropApp.swift */,
 				29FA846E2C406723000C1B81 /* ContentView.swift */,
+				29FA84D52C40BF2F000C1B81 /* ListView.swift */,
 				29FA84702C406724000C1B81 /* Assets.xcassets */,
 				29FA84CF2C407D6D000C1B81 /* GoogleService-Info.plist */,
 				29FA84722C406724000C1B81 /* Preview Content */,
@@ -352,6 +355,7 @@
 			files = (
 				29FA846F2C406723000C1B81 /* ContentView.swift in Sources */,
 				29FA846D2C406723000C1B81 /* SkillDropApp.swift in Sources */,
+				29FA84D62C40BF2F000C1B81 /* ListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

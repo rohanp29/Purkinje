@@ -38,8 +38,11 @@ class ProximityManager: NSObject, ObservableObject, NISessionDelegate, MCNearbyS
     }
 
     func session(_ session: NISession, didUpdate nearbyObjects: [NINearbyObject]) {
-        guard let nearbyObject = nearbyObjects.first, let distance = nearbyObject.distance else { return }
-        print("Detected distance: \(distance)") //CHANGES
+        guard let nearbyObject = nearbyObjects.first, let distance = nearbyObject.distance else {
+            print("No nearby objects or distance data.")
+            return
+        }
+        print("Detected distance: \(distance)")
         isNearby = distance < 0.1 // Example condition
     }
 
@@ -54,6 +57,7 @@ class ProximityManager: NSObject, ObservableObject, NISessionDelegate, MCNearbyS
     }
 
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
+        print("Received invitation from peer: \(peerID.displayName)")
         invitationHandler(true, mcSession)
     }
 
@@ -64,6 +68,7 @@ class ProximityManager: NSObject, ObservableObject, NISessionDelegate, MCNearbyS
     }
 
     func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
+        print("Found peer: \(peerID.displayName)")
         browser.invitePeer(peerID, to: mcSession!, withContext: nil, timeout: 10)
     }
 
@@ -77,6 +82,7 @@ class ProximityManager: NSObject, ObservableObject, NISessionDelegate, MCNearbyS
         switch state {
         case .connected:
             print("Connected to peer: \(peerID.displayName)")
+            exchangeDiscoveryToken() // Exchange discovery tokens when connected
         case .connecting:
             print("Connecting to peer: \(peerID.displayName)")
         case .notConnected:
@@ -87,7 +93,8 @@ class ProximityManager: NSObject, ObservableObject, NISessionDelegate, MCNearbyS
     }
 
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        // Handle received data if needed
+        print("Did receive data from peer: \(peerID.displayName)")
+        handleReceivedData(data)
     }
 
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
@@ -100,5 +107,31 @@ class ProximityManager: NSObject, ObservableObject, NISessionDelegate, MCNearbyS
 
     func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
         // Handle resource finish if needed
+    }
+
+    private func exchangeDiscoveryToken() {
+        guard let discoveryToken = niSession?.discoveryToken else {
+            print("Failed to get discovery token.")
+            return
+        }
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: discoveryToken, requiringSecureCoding: true)
+            try mcSession?.send(data, toPeers: mcSession!.connectedPeers, with: .reliable)
+            print("Sent discovery token.")
+        } catch {
+            print("Failed to send discovery token: \(error.localizedDescription)")
+        }
+    }
+
+    private func handleReceivedData(_ data: Data) {
+        do {
+            if let discoveryToken = try NSKeyedUnarchiver.unarchivedObject(ofClass: NIDiscoveryToken.self, from: data) {
+                let config = NINearbyPeerConfiguration(peerToken: discoveryToken)
+                niSession?.run(config)
+                print("Configured nearby interaction session with received discovery token.")
+            }
+        } catch {
+            print("Failed to decode discovery token: \(error.localizedDescription)")
+        }
     }
 }

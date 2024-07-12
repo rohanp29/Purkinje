@@ -40,5 +40,23 @@ class DataManager: ObservableObject {
             }
         }
     }
+    
+    func incrementSkillCount(skillId: String) {
+            let db = Firestore.firestore()
+            let ref = db.collection("Skills").document(skillId)
+            ref.updateData([
+                "count": FieldValue.increment(Int64(1))
+            ]) { error in
+                if let error = error {
+                    print("Error updating document: \(error)")
+                } else {
+                    print("Document successfully updated")
+                    // Optionally update the local skill count as well
+                    if let index = self.skills.firstIndex(where: { $0.id == skillId }) {
+                        self.skills[index].count += 1
+                    }
+                }
+            }
+        }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29A5B9DC2C41A08800DB7A57 /* ProximityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A5B9DB2C41A08800DB7A57 /* ProximityManager.swift */; };
 		29FA846D2C406723000C1B81 /* SkillDropApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA846C2C406723000C1B81 /* SkillDropApp.swift */; };
 		29FA846F2C406723000C1B81 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA846E2C406723000C1B81 /* ContentView.swift */; };
 		29FA84712C406724000C1B81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29FA84702C406724000C1B81 /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29A5B9DB2C41A08800DB7A57 /* ProximityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProximityManager.swift; sourceTree = "<group>"; };
 		29FA84692C406723000C1B81 /* SkillDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29FA846C2C406723000C1B81 /* SkillDropApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDropApp.swift; sourceTree = "<group>"; };
 		29FA846E2C406723000C1B81 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				29FA84DF2C417E2E000C1B81 /* ContentViewModel.swift */,
 				29FA84DB2C40C5ED000C1B81 /* Skill.swift */,
 				29FA84DD2C40C8DD000C1B81 /* DataManager.swift */,
+				29A5B9DB2C41A08800DB7A57 /* ProximityManager.swift */,
 				29FA84702C406724000C1B81 /* Assets.xcassets */,
 				29FA84CF2C407D6D000C1B81 /* GoogleService-Info.plist */,
 				29FA84722C406724000C1B81 /* Preview Content */,
@@ -367,6 +370,7 @@
 				29FA84E02C417E2E000C1B81 /* ContentViewModel.swift in Sources */,
 				29FA84DC2C40C5ED000C1B81 /* Skill.swift in Sources */,
 				29FA846D2C406723000C1B81 /* SkillDropApp.swift in Sources */,
+				29A5B9DC2C41A08800DB7A57 /* ProximityManager.swift in Sources */,
 				29FA84D62C40BF2F000C1B81 /* ListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

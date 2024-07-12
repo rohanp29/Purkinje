@@ -5,35 +5,43 @@
 //  Created by Rohan and Rebecca on 7/11/24.
 //
 
+// ContentView.swift
 import SwiftUI
 import Firebase
 
 struct ContentView: View {
     @EnvironmentObject var dataManager: DataManager
     @EnvironmentObject var contentViewModel: ContentViewModel
-    
+    @StateObject private var proximityManager = ProximityManager() //CHANGES
+    @State private var selectedSkillId: String? //CHANGES
+
     var body: some View {
-            Group {
-                if contentViewModel.userIsLoggedIn {
-                    ListView()
-                        .environmentObject(contentViewModel)
-                } else {
-                    loginView
-                }
+        Group {
+            if contentViewModel.userIsLoggedIn {
+                ListView(selectedSkillId: $selectedSkillId) //CHANGES
+                    .environmentObject(contentViewModel)
+            } else {
+                loginView
             }
-            .onAppear {
-                if Auth.auth().currentUser != nil {
-                    contentViewModel.userIsLoggedIn = true
-                } else {
-                    Auth.auth().addStateDidChangeListener { auth, user in
-                        if user != nil {
-                            contentViewModel.userIsLoggedIn = true
-                        }
+        }
+        .onAppear {
+            if Auth.auth().currentUser != nil {
+                contentViewModel.userIsLoggedIn = true
+            } else {
+                Auth.auth().addStateDidChangeListener { auth, user in
+                    if user != nil {
+                        contentViewModel.userIsLoggedIn = true
                     }
                 }
             }
         }
-    
+        .onChange(of: proximityManager.isNearby) { //CHANGES
+            if proximityManager.isNearby, let skillId = selectedSkillId { //CHANGES
+                dataManager.incrementSkillCount(skillId: skillId) //CHANGES
+            } //CHANGES
+        } //CHANGES
+    }
+
     var loginView: some View {
         ZStack {
             Color.black
@@ -148,7 +156,6 @@ extension View {
         ZStack(alignment: alignment) {
             placeholder().opacity(shouldShow ? 1 : 0)
             self
-            }
         }
-    
+    }
 }

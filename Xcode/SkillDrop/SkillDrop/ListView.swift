@@ -5,6 +5,7 @@
 //  Created by Rohan and Rebecca on 7/11/24.
 //
 
+// ListView.swift
 import SwiftUI
 import FirebaseAuth
 
@@ -12,7 +13,7 @@ struct ListView: View {
     @EnvironmentObject var dataManager: DataManager
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var contentViewModel: ContentViewModel
-    
+    @Binding var selectedSkillId: String?
     
     var body: some View {
         NavigationView {
@@ -22,6 +23,9 @@ struct ListView: View {
                     Spacer()
                     Text("\(skill.count)")
                         .foregroundColor(.gray)
+                }
+                .onTapGesture { //CHANGES
+                    selectedSkillId = skill.id
                 }
             }
             .navigationTitle("Skills")
@@ -50,12 +54,11 @@ struct ListView: View {
             print("Error signing out: \(error.localizedDescription)")
         }
     }
- 
 }
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView()
+        ListView(selectedSkillId: .constant(nil))
             .environmentObject(DataManager())
             .environmentObject(ContentViewModel())
     }

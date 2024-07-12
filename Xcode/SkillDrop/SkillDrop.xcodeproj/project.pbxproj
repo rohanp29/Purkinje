@@ -69,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		29A5B9DB2C41A08800DB7A57 /* ProximityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProximityManager.swift; sourceTree = "<group>"; };
+		29A5B9F72C41BC1300DB7A57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		29FA84692C406723000C1B81 /* SkillDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29FA846C2C406723000C1B81 /* SkillDropApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDropApp.swift; sourceTree = "<group>"; };
 		29FA846E2C406723000C1B81 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -162,6 +163,7 @@
 		29FA846B2C406723000C1B81 /* SkillDrop */ = {
 			isa = PBXGroup;
 			children = (
+				29A5B9F72C41BC1300DB7A57 /* Info.plist */,
 				29FA846C2C406723000C1B81 /* SkillDropApp.swift */,
 				29FA846E2C406723000C1B81 /* ContentView.swift */,
 				29FA84D52C40BF2F000C1B81 /* ListView.swift */,
@@ -535,8 +537,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SkillDrop/Preview Content\"";
+				DEVELOPMENT_TEAM = MAAAG4A94M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SkillDrop/Info.plist;
+				INFOPLIST_KEY_NSNearbyInteractionUsageDescription = "We need access to nearby interaction to increment count";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -563,8 +568,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SkillDrop/Preview Content\"";
+				DEVELOPMENT_TEAM = MAAAG4A94M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SkillDrop/Info.plist;
+				INFOPLIST_KEY_NSNearbyInteractionUsageDescription = "We need access to nearby interaction to increment count";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

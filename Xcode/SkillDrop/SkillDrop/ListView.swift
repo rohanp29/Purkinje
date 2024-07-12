@@ -14,35 +14,46 @@ struct ListView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var contentViewModel: ContentViewModel
     @Binding var selectedSkillId: String?
+    @StateObject private var proximityManager = ProximityManager() //CHANGES
     
     var body: some View {
         NavigationView {
-            List(dataManager.skills, id: \.id) { skill in
-                HStack {
-                    Text(skill.skilltype)
-                    Spacer()
-                    Text("\(skill.count)")
-                        .foregroundColor(.gray)
+            VStack {
+                Text(proximityManager.isNearby ? "Nearby Device Detected" : "No Device Nearby") //CHANGES
+                    .foregroundColor(proximityManager.isNearby ? .green : .red) //CHANGES
+                    .padding() //CHANGES
+                
+                List(dataManager.skills, id: \.id) { skill in
+                    HStack {
+                        Text(skill.skilltype)
+                        Spacer()
+                        Text("\(skill.count)")
+                            .foregroundColor(.gray)
+                    }
+                    .onTapGesture {
+                        selectedSkillId = skill.id
+                    }
                 }
-                .onTapGesture { //CHANGES
-                    selectedSkillId = skill.id
-                }
+                .navigationTitle("Skills")
+                .navigationBarItems(trailing: HStack {
+                    Button(action: {
+                        logout()
+                    }, label: {
+                        Text("Logout")
+                    })
+                    Button(action: {
+                        //add new skill action
+                    }, label: {
+                        Image(systemName: "plus")
+                    })
+                })
             }
-            .navigationTitle("Skills")
-            .navigationBarItems(trailing: HStack {
-                Button(action: {
-                    logout()
-                //add
-                }, label: {
-                    Text("Logout")
-                })
-                Button(action: {
-                    //add new skill action
-                }, label: {
-                    Image(systemName: "plus")
-                })
-            })
         }
+        .onChange(of: proximityManager.isNearby) { //CHANGES
+            if proximityManager.isNearby, let skillId = selectedSkillId { //CHANGES
+                dataManager.incrementSkillCount(skillId: skillId) //CHANGES
+            } //CHANGES
+        } //CHANGES
     }
     
     func logout() {

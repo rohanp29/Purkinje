@@ -38,7 +38,8 @@ class ProximityManager: NSObject, ObservableObject, NISessionDelegate, MCNearbyS
     }
 
     func session(_ session: NISession, didUpdate nearbyObjects: [NINearbyObject]) {
-        guard let nearbyObject = nearbyObjects.first, let distance = nearbyObject.distance else { return } //CHANGES
+        guard let nearbyObject = nearbyObjects.first, let distance = nearbyObject.distance else { return }
+        print("Detected distance: \(distance)") //CHANGES
         isNearby = distance < 0.1 // Example condition
     }
 

@@ -14,8 +14,13 @@ struct ListView: View {
     var body: some View {
         NavigationView {
             List(dataManager.skills, id: \.id) { skill in
-                Text(skill.skilltype)
-            }
+                            HStack {
+                                Text(skill.skilltype)
+                                Spacer()
+                                Text("\(skill.count)")
+                                    .foregroundColor(.gray)
+                            }
+                        }
             .navigationTitle("Skills")
             .navigationBarItems(trailing: Button(action: {
                 //add

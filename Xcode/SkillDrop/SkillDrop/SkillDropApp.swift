@@ -10,6 +10,7 @@ import Firebase
 
 @main
 struct SkillDropApp: App {
+    @StateObject var dataManager = DataManager()
     
     init() {
         FirebaseApp.configure()
@@ -17,7 +18,9 @@ struct SkillDropApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView()
+            ListView()
+                .environmentObject(dataManager)
         }
     }
 }

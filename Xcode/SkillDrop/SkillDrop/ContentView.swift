@@ -9,20 +9,32 @@ import SwiftUI
 import Firebase
 
 struct ContentView: View {
-    @State private var email = ""
-    @State private var password = ""
-    @State private var userIsLoggedIn = false
+    @EnvironmentObject var dataManager: DataManager
+    @EnvironmentObject var contentViewModel: ContentViewModel
     
     var body: some View {
-        if userIsLoggedIn {
-            ListView()
-        } else {
-            content
+            Group {
+                if contentViewModel.userIsLoggedIn {
+                    ListView()
+                        .environmentObject(contentViewModel)
+                } else {
+                    loginView
+                }
+            }
+            .onAppear {
+                if Auth.auth().currentUser != nil {
+                    contentViewModel.userIsLoggedIn = true
+                } else {
+                    Auth.auth().addStateDidChangeListener { auth, user in
+                        if user != nil {
+                            contentViewModel.userIsLoggedIn = true
+                        }
+                    }
+                }
+            }
         }
-        //.padding()
-    }
     
-    var content: some View {
+    var loginView: some View {
         ZStack {
             Color.black
             RoundedRectangle(cornerRadius: 30.0, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
@@ -37,10 +49,10 @@ struct ContentView: View {
                     .font(.system(size:40,weight:.bold, design: .rounded))
                     .offset(x:-100, y:-100)
                 
-                TextField("Email", text:$email)
+                TextField("Email", text:$contentViewModel.email)
                     .foregroundColor(.white)
                     .textFieldStyle(.plain)
-                    .placeholder(when: email.isEmpty) {
+                    .placeholder(when: contentViewModel.email.isEmpty) {
                         Text("Email")
                             .foregroundColor(.white)
                             .bold()
@@ -50,10 +62,10 @@ struct ContentView: View {
                     .frame(width: 350, height: 1)
                     .foregroundColor(.white)
                 
-                SecureField("Password", text: $password)
+                SecureField("Password", text: $contentViewModel.password)
                     .foregroundColor(.white)
                     .textFieldStyle(.plain)
-                    .placeholder(when: password.isEmpty) {
+                    .placeholder(when: contentViewModel.password.isEmpty) {
                         Text("Password")
                             .foregroundColor(.white)
                             .bold()
@@ -94,7 +106,7 @@ struct ContentView: View {
             .onAppear {
                 Auth.auth().addStateDidChangeListener { auth, user in
                     if user != nil {
-                        userIsLoggedIn.toggle()
+                        contentViewModel.userIsLoggedIn.toggle()
                     }
                 }
             }
@@ -103,7 +115,9 @@ struct ContentView: View {
     }
     
     func login() {
-        Auth.auth().signIn(withEmail: email, password: password) { result, error in if error != nil {
+        Auth.auth().signIn(withEmail: contentViewModel.email, password: contentViewModel.password) { result, error in if error == nil {
+            contentViewModel.userIsLoggedIn = true
+        } else {
             print(error!.localizedDescription)
             }
         }
@@ -111,15 +125,18 @@ struct ContentView: View {
     
     
     func register() {
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in if error != nil{
+        Auth.auth().createUser(withEmail: contentViewModel.email, password: contentViewModel.password) { result, error in if error == nil {
+            contentViewModel.userIsLoggedIn = true
+        } else {
             print(error!.localizedDescription)
-        }
+            }
         }
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(DataManager())
 }
 
 extension View {

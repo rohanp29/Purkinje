@@ -1,18 +1,17 @@
 //
-//  ListView.swift
+//  PhysicianListView.swift
 //  SkillDrop
 //
-//  Created by Rohan and Rebecca on 7/11/24.
+//  Created by Rohan and Rebecca on 7/12/24.
 //
 
 import SwiftUI
 import FirebaseAuth
 
-struct ListView: View {
+struct PhysicianListView: View {
     @EnvironmentObject var dataManager: DataManager
-    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var contentViewModel: ContentViewModel
-    
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationView {
@@ -22,22 +21,24 @@ struct ListView: View {
                     Spacer()
                     Text("\(skill.count)")
                         .foregroundColor(.gray)
+                    
+                    Button(action: {
+                        incrementSkill(skill)
+                    }) {
+                        Image(systemName: "plus.circle")
+                    }
                 }
             }
             .navigationTitle("Skills")
-            .navigationBarItems(trailing: HStack {
-                Button(action: {
-                    logout()
-                //add
-                }, label: {
-                    Text("Logout")
-                })
-                Button(action: {
-                    //add new skill action
-                }, label: {
-                    Image(systemName: "plus")
-                })
-            })
+            .navigationBarItems(trailing: logoutButton)
+        }
+    }
+    
+    var logoutButton: some View {
+        Button(action: {
+            logout()
+        }) {
+            Text("Logout")
         }
     }
     
@@ -50,13 +51,19 @@ struct ListView: View {
             print("Error signing out: \(error.localizedDescription)")
         }
     }
- 
+    
+    func incrementSkill(_ skill: Skill) {
+        // Implement the logic to increment skill count on the trainee's phone
+        // For now, this can be a placeholder function
+        print("Incrementing skill count for \(skill.skilltype)")
+    }
 }
 
-struct ListView_Previews: PreviewProvider {
+struct PhysicianListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView()
+        PhysicianListView()
             .environmentObject(DataManager())
             .environmentObject(ContentViewModel())
     }
 }
+

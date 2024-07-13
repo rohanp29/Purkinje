@@ -1,18 +1,17 @@
 //
-//  ListView.swift
+//  TraineeListView.swift
 //  SkillDrop
 //
-//  Created by Rohan and Rebecca on 7/11/24.
+//  Created by Rohan and Rebecca on 7/12/24.
 //
 
 import SwiftUI
 import FirebaseAuth
 
-struct ListView: View {
+struct TraineeListView: View {
     @EnvironmentObject var dataManager: DataManager
-    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var contentViewModel: ContentViewModel
-    
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationView {
@@ -25,19 +24,15 @@ struct ListView: View {
                 }
             }
             .navigationTitle("Skills")
-            .navigationBarItems(trailing: HStack {
-                Button(action: {
-                    logout()
-                //add
-                }, label: {
-                    Text("Logout")
-                })
-                Button(action: {
-                    //add new skill action
-                }, label: {
-                    Image(systemName: "plus")
-                })
-            })
+            .navigationBarItems(trailing: logoutButton)
+        }
+    }
+    
+    var logoutButton: some View {
+        Button(action: {
+            logout()
+        }) {
+            Text("Logout")
         }
     }
     
@@ -50,12 +45,11 @@ struct ListView: View {
             print("Error signing out: \(error.localizedDescription)")
         }
     }
- 
 }
 
-struct ListView_Previews: PreviewProvider {
+struct TraineeListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView()
+        TraineeListView()
             .environmentObject(DataManager())
             .environmentObject(ContentViewModel())
     }

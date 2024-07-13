@@ -5,21 +5,25 @@
 //  Created by Rohan and Rebecca on 7/11/24.
 //
 
-// ContentView.swift
 import SwiftUI
 import Firebase
 
 struct ContentView: View {
     @EnvironmentObject var dataManager: DataManager
     @EnvironmentObject var contentViewModel: ContentViewModel
-    @StateObject private var proximityManager = ProximityManager() //CHANGES
-    @State private var selectedSkillId: String? //CHANGES
-
+    
     var body: some View {
         Group {
             if contentViewModel.userIsLoggedIn {
-                ListView(selectedSkillId: $selectedSkillId) //CHANGES
-                    .environmentObject(contentViewModel)
+                if contentViewModel.userRole == "physician" {
+                    PhysicianListView()
+                        .environmentObject(contentViewModel)
+                        .environmentObject(dataManager)
+                } else {
+                    TraineeListView()
+                        .environmentObject(contentViewModel)
+                        .environmentObject(dataManager)
+                }
             } else {
                 loginView
             }
@@ -27,37 +31,34 @@ struct ContentView: View {
         .onAppear {
             if Auth.auth().currentUser != nil {
                 contentViewModel.userIsLoggedIn = true
+                // Fetch user role if needed
             } else {
                 Auth.auth().addStateDidChangeListener { auth, user in
                     if user != nil {
                         contentViewModel.userIsLoggedIn = true
+                        // Fetch user role if needed
                     }
                 }
             }
         }
-        .onChange(of: proximityManager.isNearby) { //CHANGES
-            if proximityManager.isNearby, let skillId = selectedSkillId { //CHANGES
-                dataManager.incrementSkillCount(skillId: skillId) //CHANGES
-            } //CHANGES
-        } //CHANGES
     }
-
+    
     var loginView: some View {
         ZStack {
             Color.black
-            RoundedRectangle(cornerRadius: 30.0, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
+            RoundedRectangle(cornerRadius: 30.0, style: .continuous)
                 .foregroundStyle(.linearGradient(colors: [.blue, .blue], startPoint: .topLeading, endPoint: .bottomTrailing))
-                .frame(width:1000, height: 400)
+                .frame(width: 1000, height: 400)
                 .rotationEffect(.degrees(135))
-                .offset(y:-350)
+                .offset(y: -350)
             
-            VStack(spacing:20){
+            VStack(spacing: 20) {
                 Text("Skill Drop")
                     .foregroundColor(.white)
-                    .font(.system(size:40,weight:.bold, design: .rounded))
-                    .offset(x:-100, y:-100)
+                    .font(.system(size: 40, weight: .bold, design: .rounded))
+                    .offset(x: -100, y: -100)
                 
-                TextField("Email", text:$contentViewModel.email)
+                TextField("Email", text: $contentViewModel.email)
                     .foregroundColor(.white)
                     .textFieldStyle(.plain)
                     .placeholder(when: contentViewModel.email.isEmpty) {
@@ -83,6 +84,13 @@ struct ContentView: View {
                     .frame(width: 350, height: 1)
                     .foregroundColor(.white)
                 
+                Picker("Role", selection: $contentViewModel.userRole) {
+                    Text("Attending Physician").tag("physician")
+                    Text("Medical Trainee").tag("trainee")
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
+                
                 Button {
                     register()
                 } label: {
@@ -96,21 +104,19 @@ struct ContentView: View {
                         .foregroundColor(.white)
                 }
                 .padding(.top)
-                .offset(y:100)
+                .offset(y: 50)
                 
-                Button{
+                Button {
                     login()
-                }label:{
+                } label: {
                     Text("Already have an account? Login")
                         .bold()
                         .foregroundColor(.white)
-                
                 }
-
                 .padding(.top)
-                .offset(y:110)
+                .offset(y: 60)
             }
-            .frame(width:350)
+            .frame(width: 350)
             .onAppear {
                 Auth.auth().addStateDidChangeListener { auth, user in
                     if user != nil {
@@ -123,35 +129,31 @@ struct ContentView: View {
     }
     
     func login() {
-        Auth.auth().signIn(withEmail: contentViewModel.email, password: contentViewModel.password) { result, error in if error == nil {
-            contentViewModel.userIsLoggedIn = true
-        } else {
-            print(error!.localizedDescription)
+        Auth.auth().signIn(withEmail: contentViewModel.email, password: contentViewModel.password) { result, error in
+            if error == nil {
+                contentViewModel.userIsLoggedIn = true
+            } else {
+                print(error!.localizedDescription)
             }
         }
     }
-    
     
     func register() {
-        Auth.auth().createUser(withEmail: contentViewModel.email, password: contentViewModel.password) { result, error in if error == nil {
-            contentViewModel.userIsLoggedIn = true
-        } else {
-            print(error!.localizedDescription)
+        Auth.auth().createUser(withEmail: contentViewModel.email, password: contentViewModel.password) { result, error in
+            if error == nil {
+                contentViewModel.userIsLoggedIn = true
+            } else {
+                print(error!.localizedDescription)
             }
         }
     }
-}
-
-#Preview {
-    ContentView()
-        .environmentObject(DataManager())
 }
 
 extension View {
     func placeholder<Content: View>(
         when shouldShow: Bool,
         alignment: Alignment = .leading,
-        @ViewBuilder placeholder:() -> Content) -> some View {
+        @ViewBuilder placeholder: () -> Content) -> some View {
         
         ZStack(alignment: alignment) {
             placeholder().opacity(shouldShow ? 1 : 0)
@@ -159,3 +161,4 @@ extension View {
         }
     }
 }
+

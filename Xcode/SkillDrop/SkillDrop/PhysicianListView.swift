@@ -15,10 +15,18 @@ struct PhysicianListView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var mpcSession: MPCSession?
     @State private var niManager = NearbyInteractionManager()
-    
+    @State private var isConnected = false
+    @State private var showAlert = false
+    @State private var alertMessage = ""
+
     var body: some View {
         NavigationView {
             VStack {
+                // Connection Status Label
+                Text(isConnected ? "Connection is established" : "Connection not established")
+                    .foregroundColor(isConnected ? .green : .red)
+                    .padding()
+
                 Button(action: {
                     startGrantCredentialSession()
                 }) {
@@ -50,6 +58,9 @@ struct PhysicianListView: View {
                 .navigationTitle("Skills")
                 .navigationBarItems(trailing: logoutButton)
             }
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("Connection Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+            }
         }
     }
     
@@ -72,8 +83,14 @@ struct PhysicianListView: View {
     }
     
     func incrementSkill(_ skill: Skill) {
-        print("Attempting to increment skill: \(skill.skilltype) with ID: \(skill.id)")
-        dataManager.incrementSkillCount(skillID: skill.id)
+        if isConnected {
+            print("Attempting to increment skill: \(skill.skilltype) with ID: \(skill.id)")
+            dataManager.incrementSkillCount(skillID: skill.id)
+        } else {
+            print("No connection established. Cannot increment skill.")
+            alertMessage = "No connection established with the trainee. Cannot increment skill."
+            showAlert = true
+        }
     }
     
     func startGrantCredentialSession() {
@@ -86,9 +103,14 @@ struct PhysicianListView: View {
         // Set up Multipeer Connectivity
         mpcSession = MPCSession(service: "skilldrop", identity: "attending", maxPeers: 1)
         mpcSession?.peerConnectedHandler = { peerID in
+            print("Connected to peer: \(peerID.displayName)")
+            self.isConnected = true
             // Send discovery token to the peer
-            print("Sending discovery token to peer: \(peerID.displayName)")
             self.sendDiscoveryToken(myToken)
+        }
+        mpcSession?.peerDisconnectedHandler = { peerID in
+            print("Disconnected from peer: \(peerID.displayName)")
+            self.isConnected = false
         }
         mpcSession?.peerDataHandler = { data, peerID in
             // Receive discovery token from the peer

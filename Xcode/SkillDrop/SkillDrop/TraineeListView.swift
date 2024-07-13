@@ -15,10 +15,16 @@ struct TraineeListView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var mpcSession: MPCSession?
     @State private var niManager = NearbyInteractionManager()
-    
+    @State private var isConnected = false
+
     var body: some View {
         NavigationView {
             VStack {
+                // Connection Status Label
+                Text(isConnected ? "Connection is established" : "Connection not established")
+                    .foregroundColor(isConnected ? .green : .red)
+                    .padding()
+
                 Button(action: {
                     startReceiveCredentialSession()
                 }) {
@@ -75,9 +81,18 @@ struct TraineeListView: View {
         // Set up Multipeer Connectivity
         mpcSession = MPCSession(service: "skilldrop", identity: "trainee", maxPeers: 1)
         mpcSession?.peerConnectedHandler = { peerID in
+            print("Trainee connected to peer: \(peerID.displayName)")
+            DispatchQueue.main.async {
+                self.isConnected = true
+            }
             // Send discovery token to the peer
-            print("Sending discovery token to peer: \(peerID.displayName)")
             self.sendDiscoveryToken(myToken)
+        }
+        mpcSession?.peerDisconnectedHandler = { peerID in
+            print("Trainee disconnected from peer: \(peerID.displayName)")
+            DispatchQueue.main.async {
+                self.isConnected = false
+            }
         }
         mpcSession?.peerDataHandler = { data, peerID in
             // Receive discovery token from the peer

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct Skill: Identifiable {
-    var id: String
+    var id: String { documentID }
+    var documentID: String
     var skilltype: String
     var count: Int
 }

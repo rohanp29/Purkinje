@@ -72,8 +72,7 @@ struct PhysicianListView: View {
     }
     
     func incrementSkill(_ skill: Skill) {
-        // Placeholder for incrementing skill count on the trainee's phone
-        print("Incrementing skill count for \(skill.skilltype)")
+        dataManager.incrementSkillCount(skill: skill)
     }
     
     func startGrantCredentialSession() {

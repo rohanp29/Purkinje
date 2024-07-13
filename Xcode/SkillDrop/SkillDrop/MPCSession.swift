@@ -44,16 +44,19 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     func start() {
         mcAdvertiser.startAdvertisingPeer()
         mcBrowser.startBrowsingForPeers()
+        print("MPCSession started advertising and browsing")
     }
 
     func suspend() {
         mcAdvertiser.stopAdvertisingPeer()
         mcBrowser.stopBrowsingForPeers()
+        print("MPCSession suspended advertising and browsing")
     }
 
     func invalidate() {
         suspend()
         mcSession.disconnect()
+        print("MPCSession invalidated")
     }
 
     func sendDataToAllPeers(data: Data) {
@@ -63,6 +66,7 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     func sendData(data: Data, peers: [MCPeerID], mode: MCSessionSendDataMode) {
         do {
             try mcSession.send(data, toPeers: peers, with: mode)
+            print("Data sent to peers: \(peers)")
         } catch let error {
             NSLog("Error sending data: \(error)")
         }
@@ -70,6 +74,7 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
 
     // MARK: - `MPCSession` private methods.
     private func peerConnected(peerID: MCPeerID) {
+        print("Peer connected: \(peerID.displayName)")
         if let handler = peerConnectedHandler {
             DispatchQueue.main.async {
                 handler(peerID)
@@ -81,6 +86,7 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     }
 
     private func peerDisconnected(peerID: MCPeerID) {
+        print("Peer disconnected: \(peerID.displayName)")
         if let handler = peerDisconnectedHandler {
             DispatchQueue.main.async {
                 handler(peerID)
@@ -100,13 +106,14 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         case .notConnected:
             peerDisconnected(peerID: peerID)
         case .connecting:
-            break
+            print("Connecting to peer: \(peerID.displayName)")
         @unknown default:
             fatalError("Unhandled MCSessionState")
         }
     }
 
     internal func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+        print("Data received from peer: \(peerID.displayName)")
         if let handler = peerDataHandler {
             DispatchQueue.main.async {
                 handler(data, peerID)
@@ -135,16 +142,18 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
 
     // MARK: - `MCNearbyServiceBrowserDelegate`.
     internal func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String: String]?) {
+        print("Found peer: \(peerID.displayName)")
         guard let identityValue = info?[MPCSessionConstants.kKeyIdentity] else {
             return
         }
         if identityValue == identityString && mcSession.connectedPeers.count < maxNumPeers {
             browser.invitePeer(peerID, to: mcSession, withContext: nil, timeout: 10)
+            print("Invited peer: \(peerID.displayName)")
         }
     }
 
     internal func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
-        // The sample app intentional omits this implementation.
+        print("Lost peer: \(peerID.displayName)")
     }
 
     // MARK: - `MCNearbyServiceAdvertiserDelegate`.
@@ -152,9 +161,11 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
                              didReceiveInvitationFromPeer peerID: MCPeerID,
                              withContext context: Data?,
                              invitationHandler: @escaping (Bool, MCSession?) -> Void) {
+        print("Received invitation from peer: \(peerID.displayName)")
         // Accept the invitation only if the number of peers is less than the maximum.
         if self.mcSession.connectedPeers.count < maxNumPeers {
             invitationHandler(true, mcSession)
+            print("Accepted invitation from peer: \(peerID.displayName)")
         }
     }
 }

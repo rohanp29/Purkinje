@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		290368E92C421E1A00CD75D4 /* PhysicianListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290368E82C421E1A00CD75D4 /* PhysicianListView.swift */; };
 		290368EB2C421E3E00CD75D4 /* TraineeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290368EA2C421E3E00CD75D4 /* TraineeListView.swift */; };
+		29473E602C42E23D00A9CF02 /* NearbyInteractionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29473E5F2C42E23D00A9CF02 /* NearbyInteractionManager.swift */; };
 		298EB2EC2C42DF7200458049 /* MPCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298EB2EB2C42DF7200458049 /* MPCSession.swift */; };
 		29FA846D2C406723000C1B81 /* SkillDropApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA846C2C406723000C1B81 /* SkillDropApp.swift */; };
 		29FA846F2C406723000C1B81 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA846E2C406723000C1B81 /* ContentView.swift */; };
@@ -72,6 +73,7 @@
 /* Begin PBXFileReference section */
 		290368E82C421E1A00CD75D4 /* PhysicianListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicianListView.swift; sourceTree = "<group>"; };
 		290368EA2C421E3E00CD75D4 /* TraineeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraineeListView.swift; sourceTree = "<group>"; };
+		29473E5F2C42E23D00A9CF02 /* NearbyInteractionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyInteractionManager.swift; sourceTree = "<group>"; };
 		298EB2EA2C42D9AC00458049 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		298EB2EB2C42DF7200458049 /* MPCSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCSession.swift; sourceTree = "<group>"; };
 		29FA84692C406723000C1B81 /* SkillDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,7 +149,6 @@
 		29FA84602C406723000C1B81 = {
 			isa = PBXGroup;
 			children = (
-				298EB2EB2C42DF7200458049 /* MPCSession.swift */,
 				29FA846B2C406723000C1B81 /* SkillDrop */,
 				29FA847C2C406724000C1B81 /* SkillDropTests */,
 				29FA84862C406724000C1B81 /* SkillDropUITests */,
@@ -169,6 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				298EB2EA2C42D9AC00458049 /* Info.plist */,
+				29473E5F2C42E23D00A9CF02 /* NearbyInteractionManager.swift */,
+				298EB2EB2C42DF7200458049 /* MPCSession.swift */,
 				29FA846C2C406723000C1B81 /* SkillDropApp.swift */,
 				29FA846E2C406723000C1B81 /* ContentView.swift */,
 				290368E82C421E1A00CD75D4 /* PhysicianListView.swift */,
@@ -374,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29FA846F2C406723000C1B81 /* ContentView.swift in Sources */,
+				29473E602C42E23D00A9CF02 /* NearbyInteractionManager.swift in Sources */,
 				29FA84DE2C40C8DD000C1B81 /* DataManager.swift in Sources */,
 				290368E92C421E1A00CD75D4 /* PhysicianListView.swift in Sources */,
 				29FA84E02C417E2E000C1B81 /* ContentViewModel.swift in Sources */,

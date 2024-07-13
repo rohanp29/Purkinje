@@ -7,12 +7,14 @@
 
 import SwiftUI
 import FirebaseAuth
+import NearbyInteraction
 
 struct PhysicianListView: View {
     @EnvironmentObject var dataManager: DataManager
     @EnvironmentObject var contentViewModel: ContentViewModel
     @Environment(\.presentationMode) var presentationMode
     @State private var mpcSession: MPCSession?
+    @State private var niManager = NearbyInteractionManager()
     
     var body: some View {
         NavigationView {
@@ -75,10 +77,43 @@ struct PhysicianListView: View {
     }
     
     func startGrantCredentialSession() {
-        // Placeholder for starting a session using Nearby Interaction framework
-        print("Initiating credential granting")
+        // Start the Nearby Interaction session
+        niManager = NearbyInteractionManager()
+        guard let myToken = niManager.niSession?.discoveryToken else {
+            fatalError("Unable to get self discovery token, is this session invalidated?")
+        }
+        
+        // Set up Multipeer Connectivity
         mpcSession = MPCSession(service: "skilldrop", identity: "attending", maxPeers: 1)
+        mpcSession?.peerConnectedHandler = { peerID in
+            // Send discovery token to the peer
+            print("Sending discovery token to peer: \(peerID.displayName)")
+            self.sendDiscoveryToken(myToken)
+        }
+        mpcSession?.peerDataHandler = { data, peerID in
+            // Receive discovery token from the peer
+            print("Receiving discovery token from peer: \(peerID.displayName)")
+            self.receiveDiscoveryToken(data)
+        }
         mpcSession?.start()
+        
+        print("Initiating credential granting")
+    }
+    
+    func sendDiscoveryToken(_ token: NIDiscoveryToken) {
+        guard let encodedData = try? NSKeyedArchiver.archivedData(withRootObject: token, requiringSecureCoding: true) else {
+            fatalError("Unexpectedly failed to encode discovery token.")
+        }
+        print("Sending discovery token")
+        mpcSession?.sendDataToAllPeers(data: encodedData)
+    }
+    
+    func receiveDiscoveryToken(_ data: Data) {
+        guard let discoveryToken = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NIDiscoveryToken.self, from: data) else {
+            fatalError("Unexpectedly failed to decode discovery token.")
+        }
+        print("Received discovery token")
+        niManager.startSession(with: discoveryToken)
     }
 }
 

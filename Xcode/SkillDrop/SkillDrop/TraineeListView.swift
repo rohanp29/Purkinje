@@ -13,21 +13,14 @@ struct TraineeListView: View {
     @EnvironmentObject var dataManager: DataManager
     @EnvironmentObject var contentViewModel: ContentViewModel
     @Environment(\.presentationMode) var presentationMode
-    @StateObject private var mpcSession = MPCSession(service: "skilldrop", identity: "trainee", maxPeers: 1)
+    @State private var mpcSession: MPCSession?
     @State private var niManager = NearbyInteractionManager()
     
     var body: some View {
         NavigationView {
             VStack {
-                // Connection status indicator
-                Text(mpcSession.isConnected ? "Connection secured" : "Not Connected")
-                    .foregroundColor(mpcSession.isConnected ? .green : .red)
-                    .bold()
-                    .padding()
-                
                 Button(action: {
                     startReceiveCredentialSession()
-                    mpcSession.start()  // Start the MPC session
                 }) {
                     Text("Receive Credential")
                         .bold()
@@ -35,20 +28,6 @@ struct TraineeListView: View {
                         .background(
                             RoundedRectangle(cornerRadius: 10, style: .continuous)
                                 .fill(Color.blue)
-                        )
-                        .foregroundColor(.white)
-                        .padding()
-                }
-
-                Button(action: {
-                    mpcSession.resetConnection()
-                }) {
-                    Text("Reset Connection")
-                        .bold()
-                        .frame(width: 200, height: 40)
-                        .background(
-                            RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                .fill(Color.red)
                         )
                         .foregroundColor(.white)
                         .padding()
@@ -94,16 +73,20 @@ struct TraineeListView: View {
         }
         
         // Set up Multipeer Connectivity
-        mpcSession.peerConnectedHandler = { peerID in
+        mpcSession = MPCSession(service: "skilldrop", identity: "trainee", maxPeers: 1)
+        mpcSession?.peerConnectedHandler = { peerID in
             // Send discovery token to the peer
             print("Sending discovery token to peer: \(peerID.displayName)")
             self.sendDiscoveryToken(myToken)
         }
-        mpcSession.peerDataHandler = { data, peerID in
+        mpcSession?.peerDataHandler = { data, peerID in
             // Receive discovery token from the peer
             print("Receiving discovery token from peer: \(peerID.displayName)")
             self.receiveDiscoveryToken(data)
         }
+        mpcSession?.start()
+        
+        print("Initiating credential receiving")
     }
     
     func sendDiscoveryToken(_ token: NIDiscoveryToken) {
@@ -111,7 +94,7 @@ struct TraineeListView: View {
             fatalError("Unexpectedly failed to encode discovery token.")
         }
         print("Sending discovery token")
-        mpcSession.sendDataToAllPeers(data: encodedData)
+        mpcSession?.sendDataToAllPeers(data: encodedData)
     }
     
     func receiveDiscoveryToken(_ data: Data) {
@@ -130,4 +113,3 @@ struct TraineeListView_Previews: PreviewProvider {
             .environmentObject(ContentViewModel())
     }
 }
-

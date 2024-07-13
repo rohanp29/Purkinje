@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		290368E92C421E1A00CD75D4 /* PhysicianListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290368E82C421E1A00CD75D4 /* PhysicianListView.swift */; };
 		290368EB2C421E3E00CD75D4 /* TraineeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290368EA2C421E3E00CD75D4 /* TraineeListView.swift */; };
+		298EB2EC2C42DF7200458049 /* MPCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298EB2EB2C42DF7200458049 /* MPCSession.swift */; };
 		29FA846D2C406723000C1B81 /* SkillDropApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA846C2C406723000C1B81 /* SkillDropApp.swift */; };
 		29FA846F2C406723000C1B81 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FA846E2C406723000C1B81 /* ContentView.swift */; };
 		29FA84712C406724000C1B81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29FA84702C406724000C1B81 /* Assets.xcassets */; };
@@ -71,6 +72,8 @@
 /* Begin PBXFileReference section */
 		290368E82C421E1A00CD75D4 /* PhysicianListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicianListView.swift; sourceTree = "<group>"; };
 		290368EA2C421E3E00CD75D4 /* TraineeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraineeListView.swift; sourceTree = "<group>"; };
+		298EB2EA2C42D9AC00458049 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		298EB2EB2C42DF7200458049 /* MPCSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCSession.swift; sourceTree = "<group>"; };
 		29FA84692C406723000C1B81 /* SkillDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29FA846C2C406723000C1B81 /* SkillDropApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDropApp.swift; sourceTree = "<group>"; };
 		29FA846E2C406723000C1B81 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -144,6 +147,7 @@
 		29FA84602C406723000C1B81 = {
 			isa = PBXGroup;
 			children = (
+				298EB2EB2C42DF7200458049 /* MPCSession.swift */,
 				29FA846B2C406723000C1B81 /* SkillDrop */,
 				29FA847C2C406724000C1B81 /* SkillDropTests */,
 				29FA84862C406724000C1B81 /* SkillDropUITests */,
@@ -164,6 +168,7 @@
 		29FA846B2C406723000C1B81 /* SkillDrop */ = {
 			isa = PBXGroup;
 			children = (
+				298EB2EA2C42D9AC00458049 /* Info.plist */,
 				29FA846C2C406723000C1B81 /* SkillDropApp.swift */,
 				29FA846E2C406723000C1B81 /* ContentView.swift */,
 				290368E82C421E1A00CD75D4 /* PhysicianListView.swift */,
@@ -373,6 +378,7 @@
 				290368E92C421E1A00CD75D4 /* PhysicianListView.swift in Sources */,
 				29FA84E02C417E2E000C1B81 /* ContentViewModel.swift in Sources */,
 				29FA84DC2C40C5ED000C1B81 /* Skill.swift in Sources */,
+				298EB2EC2C42DF7200458049 /* MPCSession.swift in Sources */,
 				29FA846D2C406723000C1B81 /* SkillDropApp.swift in Sources */,
 				29FA84D62C40BF2F000C1B81 /* ListView.swift in Sources */,
 				290368EB2C421E3E00CD75D4 /* TraineeListView.swift in Sources */,
@@ -542,6 +548,8 @@
 				DEVELOPMENT_TEAM = MAAAG4A94M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SkillDrop/Info.plist;
+				INFOPLIST_KEY_NSNearbyInteractionAllowOnceUsageDescription = "This app needs nearbyinteraction to discover peer.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -571,6 +579,8 @@
 				DEVELOPMENT_TEAM = MAAAG4A94M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SkillDrop/Info.plist;
+				INFOPLIST_KEY_NSNearbyInteractionAllowOnceUsageDescription = "This app needs nearbyinteraction to discover peer.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

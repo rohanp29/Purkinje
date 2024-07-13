@@ -12,19 +12,36 @@ struct TraineeListView: View {
     @EnvironmentObject var dataManager: DataManager
     @EnvironmentObject var contentViewModel: ContentViewModel
     @Environment(\.presentationMode) var presentationMode
+    @State private var mpcSession: MPCSession?
     
     var body: some View {
         NavigationView {
-            List(dataManager.skills, id: \.id) { skill in
-                HStack {
-                    Text(skill.skilltype)
-                    Spacer()
-                    Text("\(skill.count)")
-                        .foregroundColor(.gray)
+            VStack {
+                Button(action: {
+                    startReceiveCredentialSession()
+                }) {
+                    Text("Receive Credential")
+                        .bold()
+                        .frame(width: 200, height: 40)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .fill(Color.blue)
+                        )
+                        .foregroundColor(.white)
+                        .padding()
                 }
+                
+                List(dataManager.skills, id: \.id) { skill in
+                    HStack {
+                        Text(skill.skilltype)
+                        Spacer()
+                        Text("\(skill.count)")
+                            .foregroundColor(.gray)
+                    }
+                }
+                .navigationTitle("Skills")
+                .navigationBarItems(trailing: logoutButton)
             }
-            .navigationTitle("Skills")
-            .navigationBarItems(trailing: logoutButton)
         }
     }
     
@@ -44,6 +61,13 @@ struct TraineeListView: View {
         } catch {
             print("Error signing out: \(error.localizedDescription)")
         }
+    }
+    
+    func startReceiveCredentialSession() {
+        // Placeholder for starting a session using Nearby Interaction framework
+        print("Initiating credential receiving")
+        mpcSession = MPCSession(service: "skilldrop", identity: "trainee", maxPeers: 1)
+        mpcSession?.start()
     }
 }
 

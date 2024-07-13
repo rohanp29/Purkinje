@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_skilldrop._tcp</string>
+	</array>
+	<key>Privacy - Nearby Interaction Usage Description
+Privacy - Nearby Interaction Usage Description
+NSNearbyInteractionUsageDescription</key>
+	<string>We need nearby interaction usage to discover your peer.</string>
+	<key>NSNearbyInteractionAllowOnceUsageDescription</key>
+	<string>This app needs nearbyinteraction to discover peer.</string>
+</dict>
+</plist>

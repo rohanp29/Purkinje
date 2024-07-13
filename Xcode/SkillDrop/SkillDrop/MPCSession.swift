@@ -60,7 +60,12 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     }
 
     func sendDataToAllPeers(data: Data) {
-        sendData(data: data, peers: mcSession.connectedPeers, mode: .reliable)
+        let peers = mcSession.connectedPeers
+        guard !peers.isEmpty else {
+            print("No connected peers to send data")
+            return
+        }
+        sendData(data: data, peers: peers, mode: .reliable)
     }
 
     func sendData(data: Data, peers: [MCPeerID], mode: MCSessionSendDataMode) {

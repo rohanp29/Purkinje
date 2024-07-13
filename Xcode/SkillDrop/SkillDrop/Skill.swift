@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Skill: Identifiable {
+struct Skill: Identifiable, Codable {
     var id: String
     var skilltype: String
     var count: Int

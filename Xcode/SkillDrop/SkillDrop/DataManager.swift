@@ -15,14 +15,13 @@ class DataManager: ObservableObject {
         fetchSkills()
     }
     
-    
     func fetchSkills() {
         skills.removeAll()
         let db = Firestore.firestore()
         let ref = db.collection("Skills")
-        ref.getDocuments { snapshot, error in 
-            guard error == nil else{
-            print(error!.localizedDescription)
+        ref.getDocuments { snapshot, error in
+            guard error == nil else {
+                print(error!.localizedDescription)
                 return
             }
             
@@ -40,5 +39,17 @@ class DataManager: ObservableObject {
             }
         }
     }
+    
+    func updateSkillCount(skill: Skill) {
+        let db = Firestore.firestore()
+        db.collection("Skills").document(skill.id).updateData([
+            "count": skill.count
+        ]) { err in
+            if let err = err {
+                print("Error updating skill count: \(err)")
+            } else {
+                print("Skill count successfully updated")
+            }
+        }
+    }
 }
-

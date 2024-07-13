@@ -8,6 +8,7 @@
 import SwiftUI
 import FirebaseAuth
 import NearbyInteraction
+import FirebaseFirestore
 
 struct TraineeListView: View {
     @EnvironmentObject var dataManager: DataManager
@@ -83,6 +84,8 @@ struct TraineeListView: View {
             // Receive discovery token from the peer
             print("Receiving discovery token from peer: \(peerID.displayName)")
             self.receiveDiscoveryToken(data)
+            // Handle increment command
+            self.handleIncrementCommand(data)
         }
         mpcSession?.start()
         
@@ -103,6 +106,20 @@ struct TraineeListView: View {
         }
         print("Received discovery token")
         niManager.startSession(with: discoveryToken)
+    }
+    
+    func handleIncrementCommand(_ data: Data) {
+        guard let skill = try? JSONDecoder().decode(Skill.self, from: data) else {
+            print("Failed to decode skill")
+            return
+        }
+        print("Increment command received for skill: \(skill.skilltype)")
+        // Increment the skill count locally
+        if let index = dataManager.skills.firstIndex(where: { $0.id == skill.id }) {
+            dataManager.skills[index].count += 1
+            // Update the skill count in Firebase
+            dataManager.updateSkillCount(skill: dataManager.skills[index])
+        }
     }
 }
 

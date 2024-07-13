@@ -41,6 +41,7 @@ struct PhysicianListView: View {
                             .foregroundColor(.gray)
                         
                         Button(action: {
+                            print("Button pressed for skill: \(skill.skilltype)")
                             incrementSkill(skill)
                         }) {
                             Image(systemName: "plus.circle")
@@ -50,6 +51,9 @@ struct PhysicianListView: View {
                 .navigationTitle("Skills")
                 .navigationBarItems(trailing: logoutButton)
             }
+        }
+        .onAppear {
+            print("PhysicianListView appeared")
         }
     }
     
@@ -72,8 +76,14 @@ struct PhysicianListView: View {
     }
     
     func incrementSkill(_ skill: Skill) {
-        // Placeholder for incrementing skill count on the trainee's phone
+        // Send the increment command to the trainee's phone
         print("Incrementing skill count for \(skill.skilltype)")
+        guard let encodedData = try? JSONEncoder().encode(skill) else {
+            print("Failed to encode skill")
+            return
+        }
+        print("Attempting to send data to all peers")
+        mpcSession?.sendDataToAllPeers(data: encodedData)
     }
     
     func startGrantCredentialSession() {

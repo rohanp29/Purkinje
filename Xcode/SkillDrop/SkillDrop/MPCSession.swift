@@ -74,7 +74,7 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
 
     // MARK: - `MPCSession` private methods.
     private func peerConnected(peerID: MCPeerID) {
-        print("Peer connected: \(peerID.displayName)")
+        print("Peer connected: \(peerID.displayName)") // CHANGE
         if let handler = peerConnectedHandler {
             DispatchQueue.main.async {
                 handler(peerID)
@@ -86,7 +86,7 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     }
 
     private func peerDisconnected(peerID: MCPeerID) {
-        print("Peer disconnected: \(peerID.displayName)")
+        print("Peer disconnected: \(peerID.displayName)") // CHANGE
         if let handler = peerDisconnectedHandler {
             DispatchQueue.main.async {
                 handler(peerID)
@@ -102,11 +102,13 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     internal func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         switch state {
         case .connected:
+            print("Session connected with peer: \(peerID.displayName)") // CHANGE
             peerConnected(peerID: peerID)
         case .notConnected:
+            print("Session not connected with peer: \(peerID.displayName)") // CHANGE
             peerDisconnected(peerID: peerID)
         case .connecting:
-            print("Connecting to peer: \(peerID.displayName)")
+            print("Session connecting with peer: \(peerID.displayName)") // CHANGE
         @unknown default:
             fatalError("Unhandled MCSessionState")
         }
@@ -122,14 +124,14 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     }
 
     internal func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
-        // The sample app intentional omits this implementation.
+        // The sample app intentionally omits this implementation.
     }
 
     internal func session(_ session: MCSession,
                           didStartReceivingResourceWithName resourceName: String,
                           fromPeer peerID: MCPeerID,
                           with progress: Progress) {
-        // The sample app intentional omits this implementation.
+        // The sample app intentionally omits this implementation.
     }
 
     internal func session(_ session: MCSession,
@@ -137,7 +139,7 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
                           fromPeer peerID: MCPeerID,
                           at localURL: URL?,
                           withError error: Error?) {
-        // The sample app intentional omits this implementation.
+        // The sample app intentionally omits this implementation.
     }
 
     // MARK: - `MCNearbyServiceBrowserDelegate`.
@@ -147,8 +149,8 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
             return
         }
         if identityValue == identityString && mcSession.connectedPeers.count < maxNumPeers {
+            print("Inviting peer: \(peerID.displayName)") // CHANGE
             browser.invitePeer(peerID, to: mcSession, withContext: nil, timeout: 10)
-            print("Invited peer: \(peerID.displayName)")
         }
     }
 
@@ -164,8 +166,8 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         print("Received invitation from peer: \(peerID.displayName)")
         // Accept the invitation only if the number of peers is less than the maximum.
         if self.mcSession.connectedPeers.count < maxNumPeers {
+            print("Accepted invitation from peer: \(peerID.displayName)") // CHANGE
             invitationHandler(true, mcSession)
-            print("Accepted invitation from peer: \(peerID.displayName)")
         }
     }
 }

@@ -18,6 +18,7 @@ struct PhysicianListView: View {
     @State private var isConnected = false
     @State private var showAlert = false
     @State private var alertMessage = ""
+    @State private var isAttemptingConnection = false
 
     var body: some View {
         NavigationView {
@@ -28,14 +29,14 @@ struct PhysicianListView: View {
                     .padding()
 
                 Button(action: {
-                    startGrantCredentialSession()
+                    toggleConnection()
                 }) {
-                    Text("Grant Credential")
+                    Text(isConnected ? "Disconnect" : "Grant Credential")
                         .bold()
                         .frame(width: 200, height: 40)
                         .background(
                             RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                .fill(Color.blue)
+                                .fill(buttonColor)
                         )
                         .foregroundColor(.white)
                         .padding()
@@ -64,6 +65,16 @@ struct PhysicianListView: View {
         }
     }
     
+    var buttonColor: Color {
+        if isAttemptingConnection {
+            return Color.green
+        } else if isConnected {
+            return Color.red
+        } else {
+            return Color.blue
+        }
+    }
+
     var logoutButton: some View {
         Button(action: {
             logout()
@@ -93,6 +104,20 @@ struct PhysicianListView: View {
         }
     }
     
+    func toggleConnection() {
+        if isConnected || isAttemptingConnection {
+            print("Disconnecting from peer")
+            mpcSession?.invalidate()
+            isConnected = false
+            isAttemptingConnection = false
+            updateConnectionStatus()
+        } else {
+            print("Attempting to connect to peer")
+            isAttemptingConnection = true
+            startGrantCredentialSession()
+        }
+    }
+    
     func startGrantCredentialSession() {
         // Start the Nearby Interaction session
         niManager = NearbyInteractionManager()
@@ -104,13 +129,21 @@ struct PhysicianListView: View {
         mpcSession = MPCSession(service: "skilldrop", identity: "attending", maxPeers: 1)
         mpcSession?.peerConnectedHandler = { peerID in
             print("Connected to peer: \(peerID.displayName)")
-            self.isConnected = true
+            DispatchQueue.main.async {
+                self.isConnected = true
+                self.isAttemptingConnection = false
+                self.updateConnectionStatus()
+            }
             // Send discovery token to the peer
             self.sendDiscoveryToken(myToken)
         }
         mpcSession?.peerDisconnectedHandler = { peerID in
             print("Disconnected from peer: \(peerID.displayName)")
-            self.isConnected = false
+            DispatchQueue.main.async {
+                self.isConnected = false
+                self.isAttemptingConnection = false
+                self.updateConnectionStatus()
+            }
         }
         mpcSession?.peerDataHandler = { data, peerID in
             // Receive discovery token from the peer
@@ -136,6 +169,10 @@ struct PhysicianListView: View {
         }
         print("Received discovery token")
         niManager.startSession(with: discoveryToken)
+    }
+    
+    func updateConnectionStatus() {
+        print("Connection status updated: \(isConnected ? "Connected" : "Not Connected")")
     }
 }
 

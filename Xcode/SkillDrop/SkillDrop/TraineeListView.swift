@@ -16,6 +16,7 @@ struct TraineeListView: View {
     @State private var mpcSession: MPCSession?
     @State private var niManager = NearbyInteractionManager()
     @State private var isConnected = false
+    @State private var isAttemptingConnection = false
 
     var body: some View {
         NavigationView {
@@ -26,14 +27,14 @@ struct TraineeListView: View {
                     .padding()
 
                 Button(action: {
-                    startReceiveCredentialSession()
+                    toggleConnection()
                 }) {
-                    Text("Receive Credential")
+                    Text(isConnected ? "Disconnect" : "Receive Credential")
                         .bold()
                         .frame(width: 200, height: 40)
                         .background(
                             RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                .fill(Color.blue)
+                                .fill(buttonColor)
                         )
                         .foregroundColor(.white)
                         .padding()
@@ -53,6 +54,16 @@ struct TraineeListView: View {
         }
     }
     
+    var buttonColor: Color {
+        if isAttemptingConnection {
+            return Color.green
+        } else if isConnected {
+            return Color.red
+        } else {
+            return Color.blue
+        }
+    }
+
     var logoutButton: some View {
         Button(action: {
             logout()
@@ -71,6 +82,20 @@ struct TraineeListView: View {
         }
     }
     
+    func toggleConnection() {
+        if isConnected || isAttemptingConnection {
+            print("Disconnecting from peer")
+            mpcSession?.invalidate()
+            isConnected = false
+            isAttemptingConnection = false
+            updateConnectionStatus()
+        } else {
+            print("Attempting to connect to peer")
+            isAttemptingConnection = true
+            startReceiveCredentialSession()
+        }
+    }
+    
     func startReceiveCredentialSession() {
         // Start the Nearby Interaction session
         niManager = NearbyInteractionManager()
@@ -84,6 +109,8 @@ struct TraineeListView: View {
             print("Trainee connected to peer: \(peerID.displayName)")
             DispatchQueue.main.async {
                 self.isConnected = true
+                self.isAttemptingConnection = false
+                self.updateConnectionStatus()
             }
             // Send discovery token to the peer
             self.sendDiscoveryToken(myToken)
@@ -92,6 +119,8 @@ struct TraineeListView: View {
             print("Trainee disconnected from peer: \(peerID.displayName)")
             DispatchQueue.main.async {
                 self.isConnected = false
+                self.isAttemptingConnection = false
+                self.updateConnectionStatus()
             }
         }
         mpcSession?.peerDataHandler = { data, peerID in
@@ -118,6 +147,10 @@ struct TraineeListView: View {
         }
         print("Received discovery token")
         niManager.startSession(with: discoveryToken)
+    }
+    
+    func updateConnectionStatus() {
+        print("Connection status updated: \(isConnected ? "Connected" : "Not Connected")")
     }
 }
 

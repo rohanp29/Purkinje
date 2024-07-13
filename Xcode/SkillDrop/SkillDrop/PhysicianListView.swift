@@ -15,7 +15,7 @@ struct PhysicianListView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var mpcSession: MPCSession?
     @State private var niManager = NearbyInteractionManager()
-    
+
     var body: some View {
         NavigationView {
             VStack {
@@ -32,14 +32,14 @@ struct PhysicianListView: View {
                         .foregroundColor(.white)
                         .padding()
                 }
-                
+
                 List(dataManager.skills, id: \.id) { skill in
                     HStack {
                         Text(skill.skilltype)
                         Spacer()
                         Text("\(skill.count)")
                             .foregroundColor(.gray)
-                        
+
                         Button(action: {
                             incrementSkill(skill)
                         }) {
@@ -52,7 +52,7 @@ struct PhysicianListView: View {
             }
         }
     }
-    
+
     var logoutButton: some View {
         Button(action: {
             logout()
@@ -60,7 +60,7 @@ struct PhysicianListView: View {
             Text("Logout")
         }
     }
-    
+
     func logout() {
         do {
             try Auth.auth().signOut()
@@ -70,18 +70,19 @@ struct PhysicianListView: View {
             print("Error signing out: \(error.localizedDescription)")
         }
     }
-    
+
     func incrementSkill(_ skill: Skill) {
-        dataManager.incrementSkillCount(skill: skill)
+        // Placeholder for incrementing skill count on the trainee's phone
+        print("Incrementing skill count for \(skill.skilltype)")
     }
-    
+
     func startGrantCredentialSession() {
         // Start the Nearby Interaction session
         niManager = NearbyInteractionManager()
         guard let myToken = niManager.niSession?.discoveryToken else {
             fatalError("Unable to get self discovery token, is this session invalidated?")
         }
-        
+
         // Set up Multipeer Connectivity
         mpcSession = MPCSession(service: "skilldrop", identity: "attending", maxPeers: 1)
         mpcSession?.peerConnectedHandler = { peerID in
@@ -95,10 +96,10 @@ struct PhysicianListView: View {
             self.receiveDiscoveryToken(data)
         }
         mpcSession?.start()
-        
+
         print("Initiating credential granting")
     }
-    
+
     func sendDiscoveryToken(_ token: NIDiscoveryToken) {
         guard let encodedData = try? NSKeyedArchiver.archivedData(withRootObject: token, requiringSecureCoding: true) else {
             fatalError("Unexpectedly failed to encode discovery token.")
@@ -106,7 +107,7 @@ struct PhysicianListView: View {
         print("Sending discovery token")
         mpcSession?.sendDataToAllPeers(data: encodedData)
     }
-    
+
     func receiveDiscoveryToken(_ data: Data) {
         guard let discoveryToken = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NIDiscoveryToken.self, from: data) else {
             fatalError("Unexpectedly failed to decode discovery token.")

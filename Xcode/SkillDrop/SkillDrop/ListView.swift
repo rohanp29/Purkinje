@@ -12,8 +12,7 @@ struct ListView: View {
     @EnvironmentObject var dataManager: DataManager
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var contentViewModel: ContentViewModel
-    
-    
+
     var body: some View {
         NavigationView {
             List(dataManager.skills, id: \.id) { skill in
@@ -28,19 +27,18 @@ struct ListView: View {
             .navigationBarItems(trailing: HStack {
                 Button(action: {
                     logout()
-                //add
                 }, label: {
                     Text("Logout")
                 })
                 Button(action: {
-                    //add new skill action
+                    // add new skill action
                 }, label: {
                     Image(systemName: "plus")
                 })
             })
         }
     }
-    
+
     func logout() {
         do {
             try Auth.auth().signOut()
@@ -50,7 +48,6 @@ struct ListView: View {
             print("Error signing out: \(error.localizedDescription)")
         }
     }
- 
 }
 
 struct ListView_Previews: PreviewProvider {

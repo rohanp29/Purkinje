@@ -12,8 +12,8 @@ class ContentViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     @Published var userIsLoggedIn = false
-    @Published var userRole: String = ""  // Property to store selected user role
-    
+    @Published var userRole: String = ""
+
     init() {
         if Auth.auth().currentUser != nil {
             userIsLoggedIn = true

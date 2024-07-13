@@ -15,7 +15,7 @@ struct TraineeListView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var mpcSession: MPCSession?
     @State private var niManager = NearbyInteractionManager()
-    
+
     var body: some View {
         NavigationView {
             VStack {
@@ -32,7 +32,7 @@ struct TraineeListView: View {
                         .foregroundColor(.white)
                         .padding()
                 }
-                
+
                 List(dataManager.skills, id: \.id) { skill in
                     HStack {
                         Text(skill.skilltype)
@@ -46,7 +46,7 @@ struct TraineeListView: View {
             }
         }
     }
-    
+
     var logoutButton: some View {
         Button(action: {
             logout()
@@ -54,7 +54,7 @@ struct TraineeListView: View {
             Text("Logout")
         }
     }
-    
+
     func logout() {
         do {
             try Auth.auth().signOut()
@@ -64,14 +64,14 @@ struct TraineeListView: View {
             print("Error signing out: \(error.localizedDescription)")
         }
     }
-    
+
     func startReceiveCredentialSession() {
         // Start the Nearby Interaction session
         niManager = NearbyInteractionManager()
         guard let myToken = niManager.niSession?.discoveryToken else {
             fatalError("Unable to get self discovery token, is this session invalidated?")
         }
-        
+
         // Set up Multipeer Connectivity
         mpcSession = MPCSession(service: "skilldrop", identity: "trainee", maxPeers: 1)
         mpcSession?.peerConnectedHandler = { peerID in
@@ -85,10 +85,10 @@ struct TraineeListView: View {
             self.receiveDiscoveryToken(data)
         }
         mpcSession?.start()
-        
+
         print("Initiating credential receiving")
     }
-    
+
     func sendDiscoveryToken(_ token: NIDiscoveryToken) {
         guard let encodedData = try? NSKeyedArchiver.archivedData(withRootObject: token, requiringSecureCoding: true) else {
             fatalError("Unexpectedly failed to encode discovery token.")
@@ -96,7 +96,7 @@ struct TraineeListView: View {
         print("Sending discovery token")
         mpcSession?.sendDataToAllPeers(data: encodedData)
     }
-    
+
     func receiveDiscoveryToken(_ data: Data) {
         guard let discoveryToken = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NIDiscoveryToken.self, from: data) else {
             fatalError("Unexpectedly failed to decode discovery token.")

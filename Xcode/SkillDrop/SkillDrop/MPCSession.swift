@@ -40,7 +40,6 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         mcBrowser.delegate = self
     }
 
-    // MARK: - `MPCSession` public methods.
     func start() {
         mcAdvertiser.startAdvertisingPeer()
         mcBrowser.startBrowsingForPeers()
@@ -72,7 +71,6 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         }
     }
 
-    // MARK: - `MPCSession` private methods.
     private func peerConnected(peerID: MCPeerID) {
         print("Peer connected: \(peerID.displayName)")
         if let handler = peerConnectedHandler {
@@ -98,7 +96,6 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         }
     }
 
-    // MARK: - `MCSessionDelegate`.
     internal func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         switch state {
         case .connected:
@@ -140,7 +137,6 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         // The sample app intentional omits this implementation.
     }
 
-    // MARK: - `MCNearbyServiceBrowserDelegate`.
     internal func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String: String]?) {
         print("Found peer: \(peerID.displayName)")
         guard let identityValue = info?[MPCSessionConstants.kKeyIdentity] else {
@@ -156,13 +152,11 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         print("Lost peer: \(peerID.displayName)")
     }
 
-    // MARK: - `MCNearbyServiceAdvertiserDelegate`.
     internal func advertiser(_ advertiser: MCNearbyServiceAdvertiser,
                              didReceiveInvitationFromPeer peerID: MCPeerID,
                              withContext context: Data?,
                              invitationHandler: @escaping (Bool, MCSession?) -> Void) {
         print("Received invitation from peer: \(peerID.displayName)")
-        // Accept the invitation only if the number of peers is less than the maximum.
         if self.mcSession.connectedPeers.count < maxNumPeers {
             invitationHandler(true, mcSession)
             print("Accepted invitation from peer: \(peerID.displayName)")

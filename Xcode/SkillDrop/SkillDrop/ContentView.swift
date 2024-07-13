@@ -11,7 +11,7 @@ import Firebase
 struct ContentView: View {
     @EnvironmentObject var dataManager: DataManager
     @EnvironmentObject var contentViewModel: ContentViewModel
-    
+
     var body: some View {
         Group {
             if contentViewModel.userIsLoggedIn {
@@ -31,18 +31,16 @@ struct ContentView: View {
         .onAppear {
             if Auth.auth().currentUser != nil {
                 contentViewModel.userIsLoggedIn = true
-                // Fetch user role if needed
             } else {
                 Auth.auth().addStateDidChangeListener { auth, user in
                     if user != nil {
                         contentViewModel.userIsLoggedIn = true
-                        // Fetch user role if needed
                     }
                 }
             }
         }
     }
-    
+
     var loginView: some View {
         ZStack {
             Color.black
@@ -51,13 +49,13 @@ struct ContentView: View {
                 .frame(width: 1000, height: 400)
                 .rotationEffect(.degrees(135))
                 .offset(y: -350)
-            
+
             VStack(spacing: 20) {
                 Text("Skill Drop")
                     .foregroundColor(.white)
                     .font(.system(size: 40, weight: .bold, design: .rounded))
                     .offset(x: -100, y: -100)
-                
+
                 TextField("Email", text: $contentViewModel.email)
                     .foregroundColor(.white)
                     .textFieldStyle(.plain)
@@ -66,11 +64,11 @@ struct ContentView: View {
                             .foregroundColor(.white)
                             .bold()
                     }
-                
+
                 Rectangle()
                     .frame(width: 350, height: 1)
                     .foregroundColor(.white)
-                
+
                 SecureField("Password", text: $contentViewModel.password)
                     .foregroundColor(.white)
                     .textFieldStyle(.plain)
@@ -79,18 +77,18 @@ struct ContentView: View {
                             .foregroundColor(.white)
                             .bold()
                     }
-                
+
                 Rectangle()
                     .frame(width: 350, height: 1)
                     .foregroundColor(.white)
-                
+
                 Picker("Role", selection: $contentViewModel.userRole) {
                     Text("Attending Physician").tag("physician")
                     Text("Medical Trainee").tag("trainee")
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding()
-                
+
                 Button {
                     register()
                 } label: {
@@ -105,7 +103,7 @@ struct ContentView: View {
                 }
                 .padding(.top)
                 .offset(y: 50)
-                
+
                 Button {
                     login()
                 } label: {
@@ -127,7 +125,7 @@ struct ContentView: View {
         }
         .ignoresSafeArea()
     }
-    
+
     func login() {
         Auth.auth().signIn(withEmail: contentViewModel.email, password: contentViewModel.password) { result, error in
             if error == nil {
@@ -137,7 +135,7 @@ struct ContentView: View {
             }
         }
     }
-    
+
     func register() {
         Auth.auth().createUser(withEmail: contentViewModel.email, password: contentViewModel.password) { result, error in
             if error == nil {
@@ -154,11 +152,9 @@ extension View {
         when shouldShow: Bool,
         alignment: Alignment = .leading,
         @ViewBuilder placeholder: () -> Content) -> some View {
-        
         ZStack(alignment: alignment) {
             placeholder().opacity(shouldShow ? 1 : 0)
             self
         }
     }
 }
-

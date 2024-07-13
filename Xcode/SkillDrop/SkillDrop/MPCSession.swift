@@ -12,10 +12,13 @@ struct MPCSessionConstants {
     static let kKeyIdentity: String = "identity"
 }
 
-class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, MCNearbyServiceAdvertiserDelegate {
+class MPCSession: NSObject, ObservableObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, MCNearbyServiceAdvertiserDelegate {
+    @Published var isConnected: Bool = false  // Add this property
+    
     var peerDataHandler: ((Data, MCPeerID) -> Void)?
     var peerConnectedHandler: ((MCPeerID) -> Void)?
     var peerDisconnectedHandler: ((MCPeerID) -> Void)?
+    
     private let serviceString: String
     private let mcSession: MCSession
     private let localPeerID = MCPeerID(displayName: UIDevice.current.name)
@@ -80,6 +83,7 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
                 handler(peerID)
             }
         }
+        updateConnectionStatus()
         if mcSession.connectedPeers.count == maxNumPeers {
             self.suspend()
         }
@@ -92,18 +96,32 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
                 handler(peerID)
             }
         }
-
+        updateConnectionStatus()
         if mcSession.connectedPeers.count < maxNumPeers {
             self.start()
         }
+    }
+
+    func updateConnectionStatus() {
+        DispatchQueue.main.async {
+            self.isConnected = !self.mcSession.connectedPeers.isEmpty
+        }
+    }
+
+    func resetConnection() {
+        mcSession.disconnect()
+        self.isConnected = false
+        print("MPCSession connection reset")
     }
 
     // MARK: - `MCSessionDelegate`.
     internal func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         switch state {
         case .connected:
+            print("Session connected with peer: \(peerID.displayName)")
             peerConnected(peerID: peerID)
         case .notConnected:
+            print("Session not connected with peer: \(peerID.displayName)")
             peerDisconnected(peerID: peerID)
         case .connecting:
             print("Connecting to peer: \(peerID.displayName)")
@@ -122,14 +140,14 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     }
 
     internal func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
-        // The sample app intentional omits this implementation.
+        // The sample app intentionally omits this implementation.
     }
 
     internal func session(_ session: MCSession,
                           didStartReceivingResourceWithName resourceName: String,
                           fromPeer peerID: MCPeerID,
                           with progress: Progress) {
-        // The sample app intentional omits this implementation.
+        // The sample app intentionally omits this implementation.
     }
 
     internal func session(_ session: MCSession,
@@ -137,7 +155,7 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
                           fromPeer peerID: MCPeerID,
                           at localURL: URL?,
                           withError error: Error?) {
-        // The sample app intentional omits this implementation.
+        // The sample app intentionally omits this implementation.
     }
 
     // MARK: - `MCNearbyServiceBrowserDelegate`.
@@ -166,6 +184,9 @@ class MPCSession: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         if self.mcSession.connectedPeers.count < maxNumPeers {
             invitationHandler(true, mcSession)
             print("Accepted invitation from peer: \(peerID.displayName)")
+        } else {
+            invitationHandler(false, nil)
+            print("Rejected invitation from peer: \(peerID.displayName)")
         }
     }
 }

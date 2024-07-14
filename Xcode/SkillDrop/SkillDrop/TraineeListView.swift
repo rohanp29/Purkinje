@@ -13,14 +13,21 @@ struct TraineeListView: View {
     @EnvironmentObject var dataManager: DataManager
     @EnvironmentObject var contentViewModel: ContentViewModel
     @Environment(\.presentationMode) var presentationMode
-    @State private var mpcSession: MPCSession?
+    @StateObject private var mpcSession = MPCSession(service: "skilldrop", identity: "trainee", maxPeers: 1)
     @State private var niManager = NearbyInteractionManager()
-
+    
     var body: some View {
         NavigationView {
             VStack {
+                // Connection status indicator
+                Text(mpcSession.isConnected ? "Connected" : "Not Connected")
+                    .foregroundColor(mpcSession.isConnected ? .green : .red)
+                    .bold()
+                    .padding()
+                
                 Button(action: {
                     startReceiveCredentialSession()
+                    mpcSession.start()  // Start the MPC session
                 }) {
                     Text("Receive Credential")
                         .bold()
@@ -33,6 +40,20 @@ struct TraineeListView: View {
                         .padding()
                 }
 
+                Button(action: {
+                    mpcSession.resetConnection()
+                }) {
+                    Text("Reset Connection")
+                        .bold()
+                        .frame(width: 200, height: 40)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .fill(Color.red)
+                        )
+                        .foregroundColor(.white)
+                        .padding()
+                }
+                
                 List(dataManager.skills, id: \.id) { skill in
                     HStack {
                         Text(skill.skilltype)
@@ -46,7 +67,7 @@ struct TraineeListView: View {
             }
         }
     }
-
+    
     var logoutButton: some View {
         Button(action: {
             logout()
@@ -54,7 +75,7 @@ struct TraineeListView: View {
             Text("Logout")
         }
     }
-
+    
     func logout() {
         do {
             try Auth.auth().signOut()
@@ -64,39 +85,35 @@ struct TraineeListView: View {
             print("Error signing out: \(error.localizedDescription)")
         }
     }
-
+    
     func startReceiveCredentialSession() {
         // Start the Nearby Interaction session
         niManager = NearbyInteractionManager()
         guard let myToken = niManager.niSession?.discoveryToken else {
             fatalError("Unable to get self discovery token, is this session invalidated?")
         }
-
+        
         // Set up Multipeer Connectivity
-        mpcSession = MPCSession(service: "skilldrop", identity: "trainee", maxPeers: 1)
-        mpcSession?.peerConnectedHandler = { peerID in
+        mpcSession.peerConnectedHandler = { peerID in
             // Send discovery token to the peer
             print("Sending discovery token to peer: \(peerID.displayName)")
             self.sendDiscoveryToken(myToken)
         }
-        mpcSession?.peerDataHandler = { data, peerID in
+        mpcSession.peerDataHandler = { data, peerID in
             // Receive discovery token from the peer
             print("Receiving discovery token from peer: \(peerID.displayName)")
             self.receiveDiscoveryToken(data)
         }
-        mpcSession?.start()
-
-        print("Initiating credential receiving")
     }
-
+    
     func sendDiscoveryToken(_ token: NIDiscoveryToken) {
         guard let encodedData = try? NSKeyedArchiver.archivedData(withRootObject: token, requiringSecureCoding: true) else {
             fatalError("Unexpectedly failed to encode discovery token.")
         }
         print("Sending discovery token")
-        mpcSession?.sendDataToAllPeers(data: encodedData)
+        mpcSession.sendDataToAllPeers(data: encodedData)
     }
-
+    
     func receiveDiscoveryToken(_ data: Data) {
         guard let discoveryToken = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NIDiscoveryToken.self, from: data) else {
             fatalError("Unexpectedly failed to decode discovery token.")

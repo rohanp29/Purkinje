@@ -7,8 +7,13 @@
 
 import SwiftUI
 
-struct Skill: Identifiable {
-    var id: String
+struct Skill: Identifiable, Equatable {
+    var id: String { documentID }
+    var documentID: String
     var skilltype: String
     var count: Int
+    
+    static func ==(lhs: Skill, rhs: Skill) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

@@ -10,32 +10,76 @@ import Firebase
 
 class DataManager: ObservableObject {
     @Published var skills: [Skill] = []
+    
+    private var db = Firestore.firestore()
+    private var listener: ListenerRegistration?
 
     init() {
         fetchSkills()
+        startListeningForSkillChanges()
     }
-
+    
     func fetchSkills() {
-        skills.removeAll()
-        let db = Firestore.firestore()
         let ref = db.collection("Skills")
         ref.getDocuments { snapshot, error in
             guard error == nil else {
                 print(error!.localizedDescription)
                 return
             }
-
+            
             if let snapshot = snapshot {
-                for document in snapshot.documents {
+                self.skills = snapshot.documents.map { document in
                     let data = document.data()
-
-                    let id = data["id"] as? String ?? ""
+                    
+                    let documentID = document.documentID
                     let skilltype = data["skilltype"] as? String ?? ""
                     let count = data["count"] as? Int ?? 0
-
-                    let skill = Skill(id: id, skilltype: skilltype, count: count)
-                    self.skills.append(skill)
+                    
+                    return Skill(documentID: documentID, skilltype: skilltype, count: count)
                 }
+            }
+        }
+    }
+
+    func startListeningForSkillChanges() {
+        listener = db.collection("Skills").addSnapshotListener { snapshot, error in
+            guard let snapshot = snapshot else {
+                print("Error fetching snapshots: \(error!)")
+                return
+            }
+            
+            var updatedSkills: [Skill] = []
+            
+            for document in snapshot.documents {
+                let data = document.data()
+                let documentID = document.documentID
+                let skilltype = data["skilltype"] as? String ?? ""
+                let count = data["count"] as? Int ?? 0
+                
+                let skill = Skill(documentID: documentID, skilltype: skilltype, count: count)
+                updatedSkills.append(skill)
+            }
+            
+            DispatchQueue.main.async {
+                self.skills = updatedSkills
+            }
+        }
+    }
+    
+    func stopListeningForSkillChanges() {
+        listener?.remove()
+    }
+
+    func incrementSkillCount(skill: Skill) {
+        let ref = db.collection("Skills").document(skill.documentID)
+        
+        ref.updateData([
+            "count": FieldValue.increment(Int64(1))
+        ]) { error in
+            if let error = error {
+                print("Error updating document: \(error)")
+            } else {
+                print("Document successfully updated")
             }
         }
     }

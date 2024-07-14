@@ -5,7 +5,6 @@
 	<key>NSBonjourServices</key>
 	<array>
 		<string>_skilldrop._tcp</string>
-		<string>_skilldrop._udp</string>
 	</array>
 	<key>Privacy - Nearby Interaction Usage Description
 Privacy - Nearby Interaction Usage Description
